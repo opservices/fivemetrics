@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg height="2048px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 2048 2048" width="2048px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+      <style type="text/css">
+         <![CDATA[
+            .fil1 {fill:none}
+            .fil0 {fill:#171617;fill-rule:nonzero}
+            ]]>
+      </style>
+   </defs>
+   <g id="Layer_x0020_1">
+      <polygon class="fil0" points="957.798,1775 294.417,1537.03 283.793,1533.21 283.792,1522.03 283.792,549.691 283.793,527.369 304.917,534.566 968.298,760.607 979.174,764.313 979.174,775.732 979.174,1760 979.174,1782.67 "/>
+      <polygon class="fil0" points="1753.58,1537.03 1090.21,1775 1068.83,1782.67 1068.83,1760 1068.83,775.732 1068.83,764.313 1079.71,760.607 1743.08,534.566 1764.21,527.369 1764.21,549.691 1764.21,1522.03 1764.21,1533.21 "/>
+      <polygon class="fil0" points="363.661,461.604 1035.05,272.626 1044.23,272.812 1666.76,473.53 1667.01,503.843 1044.48,715.192 1034.36,715.192 362.973,492.103 "/>
+   </g>
+   <rect class="fil1" height="2048" width="2048"/>
+</svg>

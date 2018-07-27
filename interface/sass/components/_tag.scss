@@ -1,0 +1,54 @@
+@function tag-maker($theme_list) {
+
+	$tag: (
+		bg: #2EB398,
+		borders: (
+			borderall: 1px solid #2EB398,
+			bordertop: null,
+			borderright: null,
+			borderbottom: null,
+			borderleft: null,
+		),
+		color: #2EB398,
+		size: 14px,
+		case: normal,
+		weight: normal,
+		hover: #2EB398,
+		rad: 0px
+	);
+
+	$temp_tag: $tag;
+	$tag: ();
+
+	@each $style, $value in $temp_tag {
+		$verified_style: verify_theme_style(
+			get($theme_list, tag),
+			$tag,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$tag: map-collect($tag, $temp_map);
+	}
+
+  	@return $tag;
+}
+
+
+
+
+
+.left-tag, .right-tag {
+
+  &:before {
+    border-style: none !important;
+  }
+}
+
+.left-tag {
+  margin-left: 0px !important;
+  margin-right: 4px !important;
+  margin-bottom: 24px !important;
+  padding: 0 6px 0 6px !important;
+}
+
+

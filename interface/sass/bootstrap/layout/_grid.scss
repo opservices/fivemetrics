@@ -1,0 +1,25 @@
+.grid-collapse {
+  padding: 0;
+
+  >rubix-row >.row, .row {
+    margin: 0;
+    >rubix-col > [class^='col-'], >[class^='col-'] {
+      padding: 0;
+    }
+  }
+}
+.grid-gutter {
+  margin: $grid-gutter-width / 2;
+}
+.grid-gutter-top {
+  margin-top: $grid-gutter-width / 2;
+}
+.grid-gutter-left {
+  margin-left: $grid-gutter-width / 2;
+}
+.grid-gutter-right {
+  margin-right: $grid-gutter-width / 2;
+}
+.grid-gutter-bottom {
+  margin-bottom: $grid-gutter-width / 2;
+}

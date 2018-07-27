@@ -1,0 +1,87 @@
+@mixin button-variant($color, $hover-color) {
+  background: $color;
+  color: $hover-color;
+  border-color: $color;
+
+  &.btn-outlined {
+    color: $color;
+    background: none;
+
+    &.btn-onlyOnHover {
+      color: $primary-color;
+
+      &:hover, &:focus, &.active {
+        color: $hover-color;
+      }
+    }
+
+    &.btn-inverse {
+      color: $hover-color;
+      border-color: $hover-color;
+
+      &:hover, &:focus, &.active {
+        color: $color;
+        background: $hover-color;
+
+        &.btn-retainBg {
+          background: $color;
+          color: $hover-color;
+          border-color: $color;
+
+          &:active {
+            background: darken($color, 18%);
+            border-color: darken($color, 30%);
+          }
+        }
+      }
+    }
+  }
+
+  &:focus,
+  &.focus,
+  &:hover,
+  &.active {
+    color: $hover-color;
+    background: lighten($color, 10%);
+    border-color: lighten($color, 10%);
+  }
+
+  &:active,
+  &.active,
+  &[aria-expanded="true"],
+  &.active:hover,
+  &.active:focus,
+  &[aria-expanded="true"]:hover,
+  &[aria-expanded="true"]:focus,
+  .open > &.dropdown-toggle {
+    color: $hover-color;
+    background: darken($color, 18%);
+        border-color: darken($color, 30%);
+    background-image: none;
+  }
+
+  &.dropdown-toggle + ul li.active a {
+    color: $hover-color;
+    background: $color;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    pointer-events: none;
+  }
+
+  .badge {
+    color: $color;
+    background-color: $color;
+  }
+}
+
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}

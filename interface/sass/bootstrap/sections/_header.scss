@@ -1,0 +1,265 @@
+@mixin theme-header($list) {
+  #navbar {
+    width: 100%;
+  }
+
+  #rubix-nav-header {
+    border: none;
+    margin-left: 0;
+    display: block;
+    height: $navbar-height;
+    transition: all 0.3s ease;
+    background: get($list, header, bg);
+
+    .navbar-brand {
+      width: 100%;
+      text-align: center;
+      color: get($list, header, color);
+
+      >img {
+        top: -3px;
+        margin: auto;
+        position: relative;
+      }
+
+      @media (max-width: 320px) {
+        >img {
+          width: 80px;
+          left: -10px;
+        }
+      }
+    }
+
+    .navbar-content {
+      height: $navbar-height;
+    }
+
+    .navbar-right {
+      margin-right: -25px;
+    }
+
+    .navbar-nav {
+      margin: 0;
+      display: inline-block;
+
+      &:first-child {
+        margin-left: -25px;
+      }
+      // &:last-child {
+      //   margin-right: -25px;
+      // }
+    }
+
+    .navbar-nav > li {
+      > a {
+        border: none;
+        padding: $navbar-height / 3;
+        display: block;
+        line-height: 1;
+      }
+
+      > a > .rubix-icon {
+        // only used for light text on dark background
+        // remove this if you are using lighter header background
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      &.divider {
+        height: $navbar-height;
+        border: 1px solid get($list, header, divider, color);
+      }
+
+      &.dropdown.open > a {
+        color: white;
+        background: none;
+      }
+
+      &.active > a, > a {
+        height: $navbar-height;
+        font-size: 0.3466666666666667 * $navbar-height;
+        background: none;
+        text-align: center;
+        color: get($list, header, color);
+
+        &:hover {
+          color: get($list, header, hover-color);
+        }
+      }
+
+      &.pressed > a {
+        color: white;
+      }
+
+      &.logout > a, &.sidebar-btn > a {
+        width: 80px;
+        font-size: 0.4 * $navbar-height;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &.logout > a {
+        color: get($list, header, logout, color);
+        background: get($list, header, logout, bg);
+
+        &:hover {
+          background: get($list, header, logout, hover-bg);
+        }
+      }
+
+      &.sidebar-btn > a {
+        color: get($list, header, sidebar-btn, color);
+        background: get($list, header, sidebar-btn, bg);
+
+        &:hover {
+          background: get($list, header, sidebar-btn, hover-bg);
+        }
+      }
+
+      &.collapse-left > a {
+        padding-left: 0;
+      }
+
+      &.collapse-right > a {
+        padding-right: 0;
+      }
+
+      &.small-font > a {
+        font-size: 0.26666666666666666 * $navbar-height;
+      }
+
+      .notification-badge {
+        font-size: 10px;
+        padding: 3px 5px;
+        margin-left: -5px;
+        line-height: 10px;
+        margin-top: -10px;
+        position: absolute;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    #rubix-nav-header {
+      margin-left: get($list, sidebar, width);
+    }
+  }
+
+  #flag-menu-btn {
+    >img {
+      top: -2px;
+      position: relative;
+    }
+  }
+
+  .lang-menu-text {
+    line-height: 32px;
+  }
+
+  .header-menu > .dropdown-menu {
+    border: none;
+    margin-top: 0px;
+    overflow: visible;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid get($list, theme, bg) !important;
+
+    &:after {
+      top: -14px;
+      right: $navbar-height / 3;
+      content: '';
+      position: absolute;
+      display: inline-block;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 12px solid get($list, theme, bg);
+    }
+  }
+
+  #flag-menu-btn + .dropdown-menu {
+    width: 325px;
+
+    .container-fluid {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+  }
+
+  #settings-menu + .dropdown-menu {
+    width: 375px;
+  }
+
+  #notifications-menu + .dropdown-menu,
+  #rss-menu + .dropdown-menu {
+    width: 325px;
+
+    > li {
+      border-bottom: 1px solid #f2f2f2;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    > li > a > .container-fluid {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    > li > a > .container-fluid > .row {
+      > .avatar-container {
+        width: 75px;
+        padding-right: 10px;
+
+        .label {
+          font-size: 8px;
+        }
+      }
+
+      > .notification-container {
+        width: 225px;
+
+        >.time {
+          line-height: 1;
+          font-size: 10px;
+          padding-bottom: 5px;
+
+          >strong >.rubix-icon {
+            margin-right: 5px;
+          }
+        }
+
+        >.message-header {
+          line-height: 1;
+          font-size: 12px;
+          padding-bottom: 5px;
+        }
+
+        >.message-details {
+          line-height: 1;
+          font-size: 10px;
+          padding-bottom: 5px;
+        }
+      }
+    }
+
+    .notification-footer-btn {
+      margin: 0;
+      height: 100%;
+      font-size: 12px;
+      border-radius: 0;
+      font-weight: bold;
+      padding: 6px 12px;
+      border: none !important;
+      color: #98A0A3 !important;
+      background: #F9FAFB !important;
+
+      &:hover, &:focus {
+        border: none !important;
+        background: darken(#F9FAFB, 5%) !important;
+      }
+
+      &.left-btn {
+        border-right: 1px solid #DDE1E6 !important;
+      }
+    }
+  }
+}

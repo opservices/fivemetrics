@@ -1,0 +1,3718 @@
+{
+  "users": [
+    "tester@fivemetrics.io",
+    "developer@fivemetrics.io"
+  ],
+  "series": [
+    {
+      "name": "test.test",
+      "interval": 300,
+      "total": 12,
+      "tags": [
+        {
+          "key": "test",
+          "value": {
+            "type": "fixed",
+            "data": "unit"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": -100,
+              "max": 1000
+            }
+          }
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": -100
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1000
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1a"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.xlarge"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "random",
+            "data": [
+              "running",
+              "stopped"
+            ]
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1a"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.2xlarge"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1b"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c3.large"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1b"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c3.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "stopped"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1c"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c3.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "stopped"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1c"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c3.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1c"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1c"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1c"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1d"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1d"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1d"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1e"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.medium"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1e"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.large"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.instances",
+      "interval": 3600,
+      "total": 25,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1e"
+          }
+        },
+
+        {
+          "key": "::fm::instanceType",
+          "value": {
+            "type": "fixed",
+            "data": "c4.large"
+          }
+        },
+        {
+          "key": "::fm::placementGroup",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "running"
+          }
+        },
+
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.autoscaling.instances",
+      "interval": 1800,
+      "total": 50,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1a"
+          }
+        },
+
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "InService"
+          }
+        },
+        {
+          "key": "::fm::healthStatus",
+          "value": {
+            "type": "fixed",
+            "data": "Healthy"
+          }
+        },
+        {
+          "key": "::fm::groupName",
+          "value": {
+            "type": "fixed",
+            "data": "prod.loadbalance.ha"
+          }
+        },
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "HA-hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.autoscaling.instances",
+      "interval": 300,
+      "total": 50,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1e"
+          }
+        },
+
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "InService"
+          }
+        },
+        {
+          "key": "::fm::healthStatus",
+          "value": {
+            "type": "fixed",
+            "data": "Healthy"
+          }
+        },
+        {
+          "key": "::fm::groupName",
+          "value": {
+            "type": "fixed",
+            "data": "prod.loadbalance.ha"
+          }
+        },
+        {
+          "key": "Environment",
+          "value": {
+            "type": "fixed",
+            "data": "hmg"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "HA-hmg"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.elb.instances",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1b"
+          }
+        },
+
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "random",
+            "data": [
+              "InService",
+              "OutOfService"
+            ]
+          }
+        },
+        {
+          "key": "::fm::elbName",
+          "value": {
+            "type": "fixed",
+            "data": "agent-hmg-vpc10"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.elb.instances",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1c"
+          }
+        },
+
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "random",
+            "data": [
+              "InService",
+              "OutOfService"
+            ]
+          }
+        },
+        {
+          "key": "::fm::elbName",
+          "value": {
+            "type": "fixed",
+            "data": "agent-hmg-vpc10"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.reserves",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::hash",
+          "value": {
+            "type": "fixed",
+            "data": "010a46ef4f9604c1a7a8a84b8c65c0a2"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "available"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 0,
+              "max": 10
+            }
+          }
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.cloudwatch.Billing.EstimatedCharges",
+      "interval": 900,
+      "total": 96,
+      "tags": [
+        {
+          "key": "Currency",
+          "value": {
+            "type": "fixed",
+            "data": "USD"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "None"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 500,
+              "max": 1000
+            }
+          }
+        },
+        "minimum": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 0,
+              "max": 500
+            }
+          }
+        },
+        "maximum": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 1000,
+              "max": 2000
+            }
+          }
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 3000,
+              "max": 4000
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.reserves",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "::fm::hash",
+          "value": {
+            "type": "fixed",
+            "data": "010a46ef4f9604c1a7a8a84b8c65c0a2"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "using"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 0,
+              "max": 10
+            }
+          }
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.subnetAvailableIps",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1a"
+          }
+        },
+        {
+          "key": "::fm::subnet",
+          "value": {
+            "type": "fixed",
+            "data": "10.18.1.0/24"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 220,
+              "max": 245
+            }
+          }
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.subnetAvailableIps",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1b"
+          }
+        },
+        {
+          "key": "::fm::subnet",
+          "value": {
+            "type": "fixed",
+            "data": "10.18.2.0/24"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 220,
+              "max": 245
+            }
+          }
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.s3.bucket.versioning",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::bucketName",
+          "value": {
+            "type": "fixed",
+            "data": "bucket-for-site"
+          }
+        },
+        {
+          "key": "::fm::versioning",
+          "value": {
+            "type": "fixed",
+            "data": "Disabled"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.s3.bucket.versioning",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "sa-east-1"
+          }
+        },
+        {
+          "key": "::fm::bucketName",
+          "value": {
+            "type": "fixed",
+            "data": "bucket-for-other-site"
+          }
+        },
+        {
+          "key": "::fm::versioning",
+          "value": {
+            "type": "fixed",
+            "data": "Suspended"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "pre-prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.s3.bucket.versioning",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::bucketName",
+          "value": {
+            "type": "fixed",
+            "data": "bucket-for-site-replication"
+          }
+        },
+        {
+          "key": "::fm::versioning",
+          "value": {
+            "type": "fixed",
+            "data": "Enabled"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.s3.bucket.versioning",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::bucketName",
+          "value": {
+            "type": "fixed",
+            "data": "bucket-for-backup-replication"
+          }
+        },
+        {
+          "key": "::fm::versioning",
+          "value": {
+            "type": "fixed",
+            "data": "Enabled"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.s3.bucket.versioning",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::bucketName",
+          "value": {
+            "type": "fixed",
+            "data": "bucket-for-backup"
+          }
+        },
+        {
+          "key": "::fm::versioning",
+          "value": {
+            "type": "fixed",
+            "data": "Enabled"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "dev"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "sa-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "sa-east-1a"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "mongodb"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 200
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1a"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "shared"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 200
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1a"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 180
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "sa-east-1"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "sa-east-1a"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "DataBase X"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "test"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "dev"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 50
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2a"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "mysql"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "prod"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 50
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2a"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "stand-by"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "dev"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 100
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2b"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7.1"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "GB"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": "stand-by"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 250
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2b"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7b"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "count"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 3
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2a"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "in-use"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": "CentOS 7c"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "count"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.ec2.ebs",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "::fm::availabilityZone",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2b"
+          }
+        },
+        {
+          "key": "::fm::state",
+          "value": {
+            "type": "fixed",
+            "data": "available"
+          }
+        },
+        {
+          "key": "::fm::type",
+          "value": {
+            "type": "fixed",
+            "data": "gp2"
+          }
+        },
+        {
+          "key": "::fm::instanceName",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "count"
+          }
+        },
+        {
+          "key": "Name",
+          "value": {
+            "type": "fixed",
+            "data": ""
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 3
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 1
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 1
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.archive",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-daily-backup"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "daily-backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 100,
+              "max": 2000
+            }
+          }
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.archive",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-daily-backup-site"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-2"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "daily-backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 100,
+              "max": 2000
+            }
+          }
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.archive",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-weekly-backup-replication"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "weekly-backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 100,
+              "max": 2000
+            }
+          }
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.archive",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-database-backup"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "weekly-backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 100,
+              "max": 2000
+            }
+          }
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.archive",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "vault-for-random-archives"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "stuff"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 1000,
+              "max": 5000
+            }
+          },
+          "minimum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "maximum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sampleCount": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sum": {
+            "type": "fixed",
+            "data": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "vault-for-random-archives"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "B"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "stuff"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 1000000,
+              "max": 50000000000
+            }
+          },
+          "minimum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "maximum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sampleCount": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sum": {
+            "type": "fixed",
+            "data": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "daily-backup"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "B"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "replication"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 10000000,
+              "max": 50000000000
+            }
+          },
+          "minimum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "maximum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sampleCount": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sum": {
+            "type": "fixed",
+            "data": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-daily-backup-site"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "B"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 10000000,
+              "max": 50000000000
+            }
+          },
+          "minimum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "maximum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sampleCount": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sum": {
+            "type": "fixed",
+            "data": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-weekly-backup-replication"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "B"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 10000000,
+              "max": 50000000000
+            }
+          },
+          "minimum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "maximum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sampleCount": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sum": {
+            "type": "fixed",
+            "data": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.size",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-database-backup"
+          }
+        },
+        {
+          "key": "unit",
+          "value": {
+            "type": "fixed",
+            "data": "B"
+          }
+        },
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "random",
+          "data": {
+            "range": {
+              "min": 10000000,
+              "max": 50000000000
+            }
+          },
+          "minimum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "maximum": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sampleCount": {
+            "type": "fixed",
+            "data": 0
+          },
+          "sum": {
+            "type": "fixed",
+            "data": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.jobs",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-database-backup"
+          }
+        },
+        {
+          "key": "::fm::jobStatus",
+          "value": {
+            "type": "fixed",
+            "data": "InProgress"
+          }
+        },
+
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.jobs",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-database-backup"
+          }
+        },
+        {
+          "key": "::fm::jobStatus",
+          "value": {
+            "type": "fixed",
+            "data": "InProgress"
+          }
+        },
+
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.jobs",
+      "interval": 300,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-replication"
+          }
+        },
+        {
+          "key": "::fm::jobStatus",
+          "value": {
+            "type": "fixed",
+            "data": "InProgress"
+          }
+        },
+
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.jobs",
+      "interval": 14400,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-replication"
+          }
+        },
+        {
+          "key": "::fm::jobStatus",
+          "value": {
+            "type": "fixed",
+            "data": "Succeeded"
+          }
+        },
+
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.jobs",
+      "interval": 7200,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-replication"
+          }
+        },
+        {
+          "key": "::fm::jobStatus",
+          "value": {
+            "type": "fixed",
+            "data": "Succeeded"
+          }
+        },
+
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    },
+    {
+      "name": "aws.glacier.vault.jobs",
+      "interval": 18000,
+      "total": 30,
+      "tags": [
+        {
+          "key": "::fm::vaultName",
+          "value": {
+            "type": "fixed",
+            "data": "my-vault-for-replication"
+          }
+        },
+        {
+          "key": "::fm::jobStatus",
+          "value": {
+            "type": "fixed",
+            "data": "Succeeded"
+          }
+        },
+
+        {
+          "key": "::fm::region",
+          "value": {
+            "type": "fixed",
+            "data": "us-east-1"
+          }
+        },
+        {
+          "key": "env",
+          "value": {
+            "type": "fixed",
+            "data": "backup"
+          }
+        }
+      ],
+      "point": {
+        "value": {
+          "type": "fixed",
+          "data": 1
+        },
+        "minimum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "maximum": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sampleCount": {
+          "type": "fixed",
+          "data": 0
+        },
+        "sum": {
+          "type": "fixed",
+          "data": 0
+        }
+      }
+    }
+  ]
+}

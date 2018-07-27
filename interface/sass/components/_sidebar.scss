@@ -1,0 +1,40 @@
+@function sidebar-maker($theme_list) {
+
+  $sidebar: (
+      bg: #273135,
+      width: 250px,
+      avatar: (
+        bg: #FA7252
+      ),
+      btn: (
+        bg: lighten(#A74635, 5%),
+        color: #FA7252,
+        hover-bg: #993F31
+      ),
+      controls: (
+        bg: #DE5939,
+        btn: (
+          color: #993F31,
+          border: darken(#D25436, 2%),
+          active-bg: lighten(#A74635, 5%),
+          active-color: #FA7252
+        )
+      )
+    );
+
+
+  $temp_sidebar: $sidebar;
+  $sidebar: ();
+
+  @each $style, $value in $temp_sidebar {
+    $verified_style: verify_theme_style(
+      get($theme_list, sidebar),
+      $temp_sidebar,
+      $style
+    );
+    $temp_map: ( $style: $verified_style );
+    $sidebar: map-collect($sidebar, $temp_map);
+  }
+  
+  @return $sidebar;
+}

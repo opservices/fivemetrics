@@ -1,0 +1,22 @@
+@function link-maker($theme_list) {
+
+	$link: (
+    	bg: $primary-color,
+        color: #CCD6DF
+    );
+
+	$temp_link: $link;
+	$link: ();
+
+	@each $style, $value in $temp_link {
+		$verified_style: verify_theme_style(
+			get($theme_list, link),
+			$temp_link,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$link: map-collect($link, $temp_map);
+	}
+
+  	@return $link;
+}

@@ -1,0 +1,21 @@
+@mixin theme-pagination($list) {
+  .pagination {
+    margin: 0 0 $line-height-computed;
+
+    .disabled > a {
+      color: #ccc;
+    }
+  }
+  .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    color: white;
+    background: get($list, theme, bg);
+    border-color: get($list, theme, bg);
+  }
+  .pagination > li > a, .pagination > li > span {
+    color: inherit;
+  }
+
+  .rubix-panel .pagination > li > a {
+    border: 1px solid #ddd;
+  }
+}

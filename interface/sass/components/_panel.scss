@@ -1,0 +1,31 @@
+@function panel-maker($theme_list) {
+	
+	$panel: (
+		bg: red,
+		bgimg: none,
+		op: 1,
+		borders: (
+			borderall: 1px solid #2EB398,
+			bordertop: null,
+			borderright: null,
+			borderbottom: null,
+			borderleft: null
+		),
+		rad: 0px
+	);
+	
+	$temp_panel: $panel;
+	$panel: ();
+	
+	@each $style, $value in $temp_panel {
+		$verified_style: verify_theme_style(
+			get($theme_list, panel),
+			$panel,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$panel: map-collect($panel, $temp_map);
+	}
+	
+	@return $panel;
+}

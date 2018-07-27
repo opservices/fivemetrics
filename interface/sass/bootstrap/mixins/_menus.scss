@@ -1,0 +1,8 @@
+@mixin menu-variant($color, $hover-color) {
+  ul li.active {
+    a, a:hover {
+      color: $hover-color;
+      background: $color !important;
+    }
+  }
+}

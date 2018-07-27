@@ -1,0 +1,15 @@
+[Unit]
+Description=App collector system service
+Requires=gcontrol.service redis.service
+After=syslog.target network.target
+
+[Service]
+User=root
+Type=forking
+ExecStart=/usr/local/bin/collector
+PIDFile=/var/run/collector.pid
+Restart=always
+ExecReload=/usr/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

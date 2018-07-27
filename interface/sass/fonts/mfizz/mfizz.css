@@ -1,0 +1,131 @@
+/*
+ * Font Mfizz v1.2
+ * Copyright 2013 Mfizz Inc, Joe Lauer
+ * MIT License
+ *
+ * Project: http://mfizz.com/oss/font-mfizz
+ *
+ * The font designed for technology and software geeks representing programming
+ * languages, operating systems, software engineering, and technology.
+ *
+ * Mfizz Inc
+ * Web: http://mfizz.com/
+ * Twitter: http://twitter.com/mfizz_inc
+ *
+ * Joe Lauer
+ * Web: http://lauer.bz/
+ * Twitter: http://twitter.com/jjlauer
+ */
+
+@font-face {
+  font-family: 'mfizz';
+  src: url('fonts/mfizz/mfizz.woff2') format('woff2'),
+       url('fonts/mfizz/mfizz.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-mfizz-"]:before,
+[class*=" icon-mfizz-"]:before {
+  font-family: "mfizz" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mfizz-microscope:before { content: "\f100"; }
+.icon-mfizz-cplusplus:before { content: "\f101"; }
+.icon-mfizz-wireless:before { content: "\f102"; }
+.icon-mfizz-fire-alt:before { content: "\f103"; }
+.icon-mfizz-mobile-device:before { content: "\f104"; }
+.icon-mfizz-objc:before { content: "\f105"; }
+.icon-mfizz-redhat:before { content: "\f106"; }
+.icon-mfizz-freebsd:before { content: "\f107"; }
+.icon-mfizz-heroku:before { content: "\f108"; }
+.icon-mfizz-python:before { content: "\f109"; }
+.icon-mfizz-java:before { content: "\f10a"; }
+.icon-mfizz-satellite:before { content: "\f10b"; }
+.icon-mfizz-debian:before { content: "\f10c"; }
+.icon-mfizz-grails:before { content: "\f10d"; }
+.icon-mfizz-c:before { content: "\f10e"; }
+.icon-mfizz-postgres:before { content: "\f10f"; }
+.icon-mfizz-database-alt2:before { content: "\f110"; }
+.icon-mfizz-raspberrypi:before { content: "\f111"; }
+.icon-mfizz-nginx:before { content: "\f112"; }
+.icon-mfizz-ruby-on-rails:before { content: "\f113"; }
+.icon-mfizz-redis:before { content: "\f114"; }
+.icon-mfizz-scala:before { content: "\f115"; }
+.icon-mfizz-gnome:before { content: "\f116"; }
+.icon-mfizz-perl:before { content: "\f117"; }
+.icon-mfizz-mysql:before { content: "\f118"; }
+.icon-mfizz-fedora:before { content: "\f119"; }
+.icon-mfizz-ghost:before { content: "\f11a"; }
+.icon-mfizz-google:before { content: "\f11b"; }
+.icon-mfizz-netbsd:before { content: "\f11c"; }
+.icon-mfizz-aws:before { content: "\f11d"; }
+.icon-mfizz-bomb:before { content: "\f11e"; }
+.icon-mfizz-looking:before { content: "\f11f"; }
+.icon-mfizz-ruby:before { content: "\f120"; }
+.icon-mfizz-mysql-alt:before { content: "\f121"; }
+.icon-mfizz-playframework-alt:before { content: "\f122"; }
+.icon-mfizz-osx:before { content: "\f123"; }
+.icon-mfizz-database:before { content: "\f124"; }
+.icon-mfizz-database-alt:before { content: "\f125"; }
+.icon-mfizz-shell:before { content: "\f126"; }
+.icon-mfizz-script:before { content: "\f127"; }
+.icon-mfizz-antenna:before { content: "\f128"; }
+.icon-mfizz-coffee-bean:before { content: "\f129"; }
+.icon-mfizz-scala-alt:before { content: "\f12a"; }
+.icon-mfizz-platter:before { content: "\f12b"; }
+.icon-mfizz-java-duke:before { content: "\f12c"; }
+.icon-mfizz-iphone:before { content: "\f12d"; }
+.icon-mfizz-script-alt:before { content: "\f12e"; }
+.icon-mfizz-google-alt:before { content: "\f12f"; }
+.icon-mfizz-haskell:before { content: "\f130"; }
+.icon-mfizz-mariadb:before { content: "\f131"; }
+.icon-mfizz-phone-retro:before { content: "\f132"; }
+.icon-mfizz-phone-alt:before { content: "\f133"; }
+.icon-mfizz-csharp:before { content: "\f134"; }
+.icon-mfizz-php:before { content: "\f135"; }
+.icon-mfizz-postgres-alt:before { content: "\f136"; }
+.icon-mfizz-html:before { content: "\f137"; }
+.icon-mfizz-mfizz:before { content: "\f138"; }
+.icon-mfizz-apache:before { content: "\f139"; }
+.icon-mfizz-hadoop:before { content: "\f13a"; }
+.icon-mfizz-ruby-on-rails-alt:before { content: "\f13b"; }
+.icon-mfizz-mobile-phone-broadcast:before { content: "\f13c"; }
+.icon-mfizz-css:before { content: "\f13d"; }
+.icon-mfizz-playframework:before { content: "\f13e"; }
+.icon-mfizz-clojure:before { content: "\f13f"; }
+.icon-mfizz-mobile-phone-alt:before { content: "\f140"; }
+.icon-mfizz-suse:before { content: "\f141"; }
+.icon-mfizz-java-bold:before { content: "\f142"; }
+.icon-mfizz-nginx-alt:before { content: "\f143"; }
+.icon-mfizz-nginx-alt2:before { content: "\f144"; }
+.icon-mfizz-linux-mint:before { content: "\f145"; }
+.icon-mfizz-dreamhost:before { content: "\f146"; }
+.icon-mfizz-blackberry:before { content: "\f147"; }
+.icon-mfizz-javascript:before { content: "\f148"; }
+.icon-mfizz-ubuntu:before { content: "\f149"; }
+.icon-mfizz-php-alt:before { content: "\f14a"; }
+.icon-mfizz-centos:before { content: "\f14b"; }
+.icon-mfizz-nodejs:before { content: "\f14c"; }
+.icon-mfizz-splatter:before { content: "\f14d"; }
+.icon-mfizz-3dprint:before { content: "\f14e"; }
+.icon-mfizz-line-graph:before { content: "\f14f"; }
+.icon-mfizz-cassandra:before { content: "\f150"; }
+.icon-mfizz-solaris:before { content: "\f151"; }
+.icon-mfizz-jetty:before { content: "\f152"; }
+.icon-mfizz-tomcat:before { content: "\f153"; }
+.icon-mfizz-oracle:before { content: "\f154"; }
+.icon-mfizz-oracle-alt:before { content: "\f155"; }
+.icon-mfizz-mssql:before { content: "\f156"; }
+.icon-mfizz-google-developers:before { content: "\f157"; }
+.icon-mfizz-google-code:before { content: "\f158"; }
+.icon-mfizz-kde:before { content: "\f159"; }
+.icon-mfizz-grails-alt:before { content: "\f15a"; }

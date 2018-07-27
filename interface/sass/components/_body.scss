@@ -1,0 +1,22 @@
+@function body-maker($theme_list) {
+
+	$body: (
+    	color: $primary-color,
+        bg: #1D1B1D
+    );
+
+	$temp_body: $body;
+	$body: ();
+
+	@each $style, $value in $temp_body {
+		$verified_style: verify_theme_style(
+			get($theme_list, body),
+			$temp_body,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$body: map-collect($body, $temp_map);
+	}
+
+  	@return $body;
+}

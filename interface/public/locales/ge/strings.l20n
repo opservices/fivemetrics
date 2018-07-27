@@ -1,0 +1,24 @@
+<!-- USEFUL TO KNOW CURRENTLY SELECTED LOCALE -->
+<selectedFlag 'Germany'>
+
+<!-- NAVIGATION LANGUAGE MENU -->
+<languageMenu[$lang] {
+  enUS: "Englisch - USA",
+  fr: "Französisch",
+  it: "Italienisch",
+  ge: "Deutsch",
+  ar: "Arabisch",
+  ch: "Chinesisch"
+}>
+
+<!-- NAVIGATION LANGUAGE MENU - HEADING -->
+<languageMenuHeading 'Auswählen einer Sprache'>
+
+<!-- SETTINGS MENU - Fluid -->
+<settingsMenuHeading 'Dimension'>
+<settingsMenuFluid 'Flüssigkeit'>
+<settingsMenuBoxed 'boxed (990px)'>
+
+<!-- NOTIFICATIONS MENU -->
+<notificationsMenuHeading 'Ihre Benachrichtigungen'>
+<notificationsTimeFirst 'Vor einer Stunde'>

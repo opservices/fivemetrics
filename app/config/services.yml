@@ -1,0 +1,120 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+    container.autowiring.strict_mode: true
+
+imports:
+    - { resource: legacy.yml }
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: true        # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+# ----------------------------------------------------------------------------------------------------------------------
+# DatabaseBundle
+# ----------------------------------------------------------------------------------------------------------------------
+    GearmanBundle\TaskManager\TaskManager: ~
+
+# ----------------------------------------------------------------------------------------------------------------------
+# DatabaseBundle
+# ----------------------------------------------------------------------------------------------------------------------
+    DatabaseBundle\Controller\:
+        resource: '../../src/DatabaseBundle/Controller'
+        tags: ['controller.service_arguments']
+
+    DatabaseBundle\Controller\Api\V1\NoSql\MetricController: ~
+    DatabaseBundle\NoSql\Metric\MetricRepository: ~
+    DatabaseBundle\NoSql\DatabaseConnectionProvider: ~
+
+# ----------------------------------------------------------------------------------------------------------------------
+# DataSourceBundle
+# ----------------------------------------------------------------------------------------------------------------------
+    DataSourceBundle\Controller\:
+        resource: '../../src/DataSourceBundle/Controller'
+        tags: ['controller.service_arguments']
+
+    DataSourceBundle\Api\V1\DataSourceCollect\ParametersResolver: ~
+    DataSourceBundle\Controller\Api\V1\System\DataSourceCollectController: ~
+    DataSourceBundle\Mapper\Api\V1\ResponseMapper: ~
+    DataSourceBundle\Entity\Aws\Region\RegionProvider: ~
+    DataSourceBundle\Doctrine\DataSourceCollectUidListener:
+        tags:
+            - { name: doctrine.event_subscriber }
+
+# ----------------------------------------------------------------------------------------------------------------------
+# EssentialsBundle
+# ----------------------------------------------------------------------------------------------------------------------
+    EssentialsBundle\Controller\:
+        resource: '../../src/EssentialsBundle/Controller'
+        tags: ['controller.service_arguments']
+
+    EssentialsBundle\ArrayMapper: ~
+    EssentialsBundle\Register\Account: ~
+    EssentialsBundle\Entity\Account\AccountBuilder: ~
+    EssentialsBundle\Controller\Api\V1\AccountController: ~
+    EssentialsBundle\Entity\TimePeriod\TimePeriodProvider: ~
+    EssentialsBundle\Api\ApiKeyAuthenticator: ~
+    EssentialsBundle\Cache\CacheFactory: ~
+    EssentialsBundle\Api\ApiAccessDeniedHandler: ~
+    EssentialsBundle\Helpers\MailHelper: ~
+    EssentialsBundle\Exception\Dispatcher:
+        arguments: ['@logger']
+
+    EssentialsBundle\EventListener\ProfilerDeathSubscriber:
+        tags:
+            - { name: kernel.event_subscriber }
+
+    EssentialsBundle\MutexProvider\MutexProvider:
+        arguments: ['%doctrine_cache.redis.host%', '%doctrine_cache.redis.port%']
+
+    EssentialsBundle\EventListener\AuthExceptionSubscriber:
+        arguments: [ '@error.dispatcher', '@router' ]
+        tags:
+            - { name: kernel.event_subscriber, event: kernel.exception }
+
+    EssentialsBundle\EventListener\ExceptionSubscriber:
+        arguments: [ '%kernel.debug%', '@error.dispatcher' ]
+        tags:
+            - { name: kernel.event_subscriber, event: kernel.exception }
+
+# ----------------------------------------------------------------------------------------------------------------------
+# FrontendBundle
+# ----------------------------------------------------------------------------------------------------------------------
+    FrontendBundle\Controller\:
+        resource: '../../src/FrontendBundle/Controller'
+        tags: ['controller.service_arguments']
+
+    FrontendBundle\Security\LoginFormAuthenticator: ~
+
+    FrontendBundle\Doctrine\HashPasswordListener:
+        tags:
+            - { name: doctrine.event_subscriber }
+
+    FrontendBundle\Doctrine\AccountUidListener:
+        tags:
+            - { name: doctrine.event_subscriber }
+
+# ----------------------------------------------------------------------------------------------------------------------
+# CollectorBundle
+# ----------------------------------------------------------------------------------------------------------------------
+    CollectorBundle\Controller\:
+        resource: '../../src/CollectorBundle/Controller'
+        tags: ['controller.service_arguments']
+
+    CollectorBundle\Mapper\Discovery\ApiMapper: ~
+    CollectorBundle\Collect\CollectBucketBuilder: ~
+    CollectorBundle\Collector\ResultSender: ~
+    CollectorBundle\Job\JobBuilder: ~
+    CollectorBundle\Processor\Processor:
+        arguments: [ "@gearman.taskmanager", "@logger"]
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Custom binds
+# ----------------------------------------------------------------------------------------------------------------------
+    Symfony\Component\Security\Guard\AuthenticatorInterface: '@app.security.login_form_authenticator'

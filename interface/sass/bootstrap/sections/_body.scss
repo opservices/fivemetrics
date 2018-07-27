@@ -1,0 +1,38 @@
+@mixin theme-body($list) {
+  #body {
+    left: 0;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+
+    z-index: 100;
+    margin-left: 0;
+    position: relative;
+    transition: all 0.3s ease;
+    background: get($list, body, bg);
+    margin-top: $line-height-computed;
+    padding-bottom: $line-height-computed;
+  }
+
+  #navbar ~ #body {
+    margin-top: $navbar-height - 1px;
+    padding-top: $line-height-computed;
+  }
+
+  #sidebar ~ #body {
+    @media (min-width: $screen-sm-min) {
+     // margin-left: get($list, sidebar, width);
+    }
+  }
+
+  #sidebar + #body {
+    margin-top: 0;
+    padding-top: $line-height-computed;
+  }
+
+  .external-event {
+    background: get($list, theme, bg);
+  }
+}

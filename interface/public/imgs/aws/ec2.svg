@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 72 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/EC2</title>
+    <defs>
+        <linearGradient x1="42.8471684%" y1="0%" x2="42.8471697%" y2="100%" id="EC2-icon-gradient">
+            <stop stop-color="#3EFCC9" offset="0%"></stop>
+            <stop stop-color="#8F52F8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Icon" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Icon/EC2" >
+            <g id="EC2-icon" transform="translate(5.000000, 0.000000)">
+                <path d="M3,62 L0,60.4112113 L0,15.5887887 L3,14 L3,62 Z" id="Combined-Shape"></path>
+                <path d="M7,61.1748702 L3,62 L3,14 L7,14.802234 L7,61.1748702 Z" id="Combined-Shape-Copy-6"></path>
+                <path d="M11,10 L7,11.9323975 L7,63.0666801 L11,65 L11,10 Z" id="Combined-Shape-Copy-5"></path>
+                <path d="M14,63.7792178 L10,65 L10,10 L14,11.2255593 L14,63.7792178 Z" id="Combined-Shape-Copy-4"></path>
+                <path d="M20,6 L15,8.45813629 L15,68.542798 L20,71 L20,6.0009343 Z" id="Combined-Shape-Copy-3"></path>
+                <path d="M26,68.9698287 L20,71 L20,6 L26,8.03584338 L26,68.9698287 Z" id="Combined-Shape-Copy-2"></path>
+                <path d="M31,0 L25,3.13877923 L25,72.8630671 L31,76 L31,0 Z" id="Combined-Shape-Copy"></path>
+                <polyline id="Fill-8" points="63 60.2599453 31 76 31 0 63 15.7409778 63 60.2599453"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,84 @@
+{
+  "jobservers": [
+    {
+      "address": "127.0.0.1"
+    }
+  ],
+  "workers": [
+    {
+      "class": "DataSourceBundle\\Gearman\\Queue\\Collector\\Generic\\Generic",
+      "desired": 10,
+      "configuration": {
+        "processors": [
+          {
+            "name": "Aws\\AutoScaling\\AutoScaling",
+            "maxRetries": 5
+          },
+          {
+            "name": "Aws\\EC2\\EC2",
+            "maxRetries": 5
+          },
+          {
+            "name": "Aws\\ElasticLoadBalancer\\ElasticLoadBalancer",
+            "maxRetries": 5
+          },
+          {
+            "name": "Aws\\EBS\\EBS",
+            "maxRetries": 5
+          },
+          {
+            "name": "Aws\\S3\\S3",
+            "maxRetries": 5
+          },
+          {
+            "name": "Aws\\Glacier\\Glacier",
+            "maxRetries": 5
+          },
+          {
+            "name": "Aws\\CloudWatch\\CloudWatch",
+            "maxRetries": 3
+          }
+        ]
+      }
+    },
+    {
+      "class": "DataSourceBundle\\Gearman\\Queue\\SendResult",
+      "desired": 2
+    },
+    {
+      "class": "DatabaseBundle\\Gearman\\Queue\\CollectResult\\ActiveCollectWriter",
+      "desired": 1
+    },
+    {
+      "class": "DatabaseBundle\\Gearman\\Queue\\System\\ProfileWriter",
+      "desired": 1
+    },
+    {
+      "class": "EssentialsBundle\\Gearman\\Queue\\MailSender",
+      "desired": 2,
+      "configuration": {
+        "retries": 5,
+        "waitTime": 5
+      }
+    },
+    {
+      "class": "EssentialsBundle\\Gearman\\Queue\\ProfilingWorker",
+      "desired": 1,
+      "configuration": {
+        "accountEmail": "system@fivemetrics.io"
+      }
+    },
+    {
+      "class": "CollectorBundle\\Gearman\\Queue\\Collector",
+      "desired": 5
+    },
+    {
+      "class": "CollectorBundle\\Gearman\\Queue\\Discovery",
+      "desired": 2
+    },
+    {
+      "class": "FrontendBundle\\Gearman\\Queue\\Onboarding",
+      "desired": 2
+    }
+  ]
+}

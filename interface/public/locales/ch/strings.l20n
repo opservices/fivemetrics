@@ -1,0 +1,24 @@
+<!-- USEFUL TO KNOW CURRENTLY SELECTED LOCALE -->
+<selectedFlag 'China'>
+
+<!-- NAVIGATION LANGUAGE MENU -->
+<languageMenu[$lang] {
+  enUS: "英语 - 美国",
+  fr: "法国人",
+  it: "意大利人",
+  ge: "德语",
+  ar: "阿拉伯语",
+  ch: "中国的"
+}>
+
+<!-- NAVIGATION LANGUAGE MENU - HEADING -->
+<languageMenuHeading '选择一个语言环境'>
+
+<!-- SETTINGS MENU - Fluid -->
+<settingsMenuHeading '尺寸'>
+<settingsMenuFluid '流体'>
+<settingsMenuBoxed '盒装 (990px)'>
+
+<!-- NOTIFICATIONS MENU -->
+<notificationsMenuHeading '您的通知'>
+<notificationsTimeFirst '一个小时前'>

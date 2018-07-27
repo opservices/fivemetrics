@@ -1,0 +1,40 @@
+@function header-maker($theme_list) {
+	
+	$header: (
+    bg: #1D1B1D,
+    color: #ffffff,
+    hover-color: #1D1B1D,
+    
+    divider: (
+      color: rgba(59, 70, 72, 0.45)
+    ),
+    
+    logout: (
+      bg: #1D1B1D,
+      color: #585858,
+      hover-bg: #ffffff
+    ),
+    
+    sidebar-btn: (
+      bg: #3EFCC9,
+      color: #1D1B1D,
+      hover-bg: darken(#3EFCC9, 10%)
+    )
+    
+  );
+
+  $temp_header: $header;
+	$header: ();
+
+	@each $style, $value in $temp_header {
+		$verified_style: verify_theme_style(
+			get($theme_list, header),
+			$temp_header,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$header: map-collect($header, $temp_map);
+	}
+
+	@return $header;
+}

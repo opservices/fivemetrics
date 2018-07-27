@@ -1,0 +1,227 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  height: $btn-height;
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  font-family: $headings-font-family;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 2px solid transparent;
+  white-space: nowrap;
+  @include button-size($btn-padding-base-vertical, $btn-padding-base-horizontal, $btn-font-size, $line-height-base, $btn-border-radius-base);
+  @include user-select(none);
+  padding-top: 3px;
+
+  &.btn-rounded {
+    height: auto;
+    line-height: 1;
+    border-radius: 100px;
+    padding: 15px !important;
+  }
+
+  &.btn-onlyOnHover {
+    border-color: #eee;
+  }
+
+  .caret {
+    margin-top: -2px;
+  }
+
+  .rubix-icon {
+    line-height: 1;
+    font-size: 18px;
+
+    & ~ span {
+      vertical-align: top;
+    }
+  }
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      @include tab-focus;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+  }
+
+  // [converter] extracted a& to a.btn
+}
+
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  @include button-variant($btn-default-color, white);
+}
+.btn-primary {
+  @include button-variant($btn-primary-color, white);
+}
+// Success appears as green
+.btn-success {
+  @include button-variant($btn-success-color, white);
+}
+// Info appears as blue-green
+.btn-info {
+  @include button-variant($btn-info-color, white);
+}
+// Warning appears as orange
+.btn-warning {
+  @include button-variant($btn-warning-color, white);
+}
+// Danger and error appear as red
+.btn-danger {
+  @include button-variant($btn-danger-color, white);
+}
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $btn-link-color;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  height: auto;
+  @include button-size($btn-padding-large-base-vertical, $btn-padding-large-base-horizontal, $btn-font-size, initial, $btn-border-radius-base);
+  line-height: 21.4285px;
+  padding: 10px 25px !important;
+
+  &.btn-rounded {
+    line-height: 1;
+    padding: $line-height-computed;
+  }
+}
+.btn-sm {
+  height: auto;
+  @include button-size($btn-padding-base-vertical, $btn-padding-base-horizontal, $btn-font-size-small, $line-height-small, $btn-border-radius-base);
+}
+.btn-xs {
+  height: auto;
+  @include button-size($btn-padding-base-vertical, $btn-padding-base-horizontal, $btn-font-size-xsmall, $line-height-small, $btn-border-radius-base);
+}
+.btn-rounded.btn.btn-sm, .btn-rounded.btn.btn-xs {
+  padding: 15px;
+  line-height: 1;
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.btn.btn-outlined {
+  outline: none;
+  background: none;
+  padding: 3px 15px 2px 15px;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+}
+
+.btn.btn-icon {
+  line-height: 0;
+  font-size: 30px;
+  min-width: 45px;
+  min-height: 45px;
+  border-radius: 100px;
+  width: auto !important;
+  height: auto !important;
+  padding: 5px 10px !important;
+}

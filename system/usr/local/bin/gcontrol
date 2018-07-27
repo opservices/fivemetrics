@@ -1,0 +1,137 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @codingStandardsIgnoreFile
+ * @codeCoverageIgnore
+ */
+
+require_once("/usr/local/app/bootstrap.php");
+
+use EssentialsBundle\KernelLoader;
+use GearmanBundle\Configuration\Loader;
+use GearmanBundle\Worker\Manager\Manager as WorkerManager;
+use GearmanBundle\Worker\Manager\Queue;
+use GearmanBundle\Entity\Configuration\JobServer;
+use EssentialsBundle\Exception\Dispatcher;
+use GearmanBundle\Worker\Process\Process;
+
+declare(ticks = 1);
+
+define('WHOIAM', basename(__FILE__));
+define('PID_FILE', '/var/run/' . WHOIAM . '.pid');
+define('CHECK_SLEEP', 5); // seconds
+/**
+ *  About ten minutes. Each workers check sleeps five seconds.
+ *  150 is approximately 600 seconds.
+ */
+define('MAX_SLEEP', 150);
+
+$wm   = new WorkerManager();
+
+function redirectStds()
+{
+    fclose(STDIN);
+    $STDIN = fopen('/dev/null', 'r');
+    fclose(STDOUT);
+    $STDOUT = fopen('/dev/null', 'w');
+    fclose(STDERR);
+    $STDERR = fopen('/dev/null', 'w');
+}
+
+function writePid()
+{
+    $fp = fopen(PID_FILE, 'w');
+    $pid = posix_getpid();
+    fprintf($fp, $pid);
+    fclose($fp);
+}
+
+function sigHandler($signo)
+{
+    global $wm;
+    $wm->stopWorkers();
+    exit(0);
+}
+
+function setSignals()
+{
+    pcntl_signal(SIGUSR1, function ($signal) {
+        sigHandler($signal);
+    });
+
+    pcntl_signal(SIGTERM, function ($signal) {
+        sigHandler($signal);
+    });
+
+    pcntl_signal(SIGHUP, function ($signal) {
+        sigHandler($signal);
+    });
+}
+
+function start()
+{
+    global $wm;
+
+    if (posix_geteuid() != 0) {
+        print WHOIAM . ' must run as root.' . PHP_EOL;
+        exit(1);
+    }
+
+    $pid = pcntl_fork();
+    if ($pid) {
+        exit(0);
+    }
+
+    redirectStds();
+    writePid();
+    setSignals();
+
+    $conf = Loader::getInstance()->load();
+
+    if (count($conf->getJobServers()) == 0) {
+        $conf->getJobServers()->add(new JobServer('127.0.0.1'));
+    }
+
+    putenv('GEARMAN_CONFIGURATION=' . base64_encode(serialize($conf)));
+
+    $workers    = $conf->getWorkers();
+    foreach ($workers as $worker) {
+        $wm->addQueue(new Queue($worker));
+    }
+}
+
+function main()
+{
+    global $wm;
+
+    $container = KernelLoader::load()->getContainer();
+    $logger = $container->get('logger');
+    $dispatcher = new Dispatcher($logger);
+
+    start();
+
+    try {
+        $wm->startWorkers();
+    } catch (\Throwable $e) {
+        $dispatcher->send($e);
+        exit(0);
+    }
+
+    $queues = $wm->getQueues();
+    while (true) {
+        foreach ($queues as $queue) {
+            $processes = $queue->getProcesses();
+
+            foreach ($processes as $process) {
+                /** @var Process $process */
+                if (! $process->getStatus()->isRunning()) {
+                    $process->start();
+                }
+            }
+        }
+
+        sleep(CHECK_SLEEP);
+    }
+}
+
+main();

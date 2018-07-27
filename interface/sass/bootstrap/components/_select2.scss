@@ -1,0 +1,27 @@
+@mixin theme-select2($list) {
+  .select2-container-multi .select2-choices {
+    border-radius: 0;
+    height: $line-height-computed;
+  }
+
+  .select2-container .select2-choice, .select2-container-multi .select2-choices {
+    border-width: 2px;
+    border-color: get($list, form, active, border);
+  }
+
+  .select2-container .select2-choice .select2-arrow {
+    color: white;
+    border-radius: 0;
+    background: get($list, form, active, border);
+    border-color: get($list, form, active, border);
+  }
+
+  .select2-drop-active, .select2-drop.select2-drop-above.select2-drop-active, .select2-container-active .select2-choice, .select2-container-active .select2-choices, .select2-dropdown-open.select2-drop-above .select2-choice, .select2-dropdown-open.select2-drop-above .select2-choices, .select2-container-multi.select2-container-active .select2-choices, .form-control.select2-container.select2-dropdown-open {
+    border-width: 2px;
+    border-color: get($list, form, active, border);
+  }
+
+  .select2-results .select2-highlighted {
+    background: get($list, form, active, border);
+  }
+}

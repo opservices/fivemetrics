@@ -1,0 +1,24 @@
+<!-- USEFUL TO KNOW CURRENTLY SELECTED LOCALE -->
+<selectedFlag 'Italy'>
+
+<!-- NAVIGATION LANGUAGE MENU -->
+<languageMenu[$lang] {
+  enUS: "Inglese - Stati Uniti",
+  fr: "francese",
+  it: "italiano",
+  ge: "tedesco",
+  ar: "arabo",
+  ch: "cinese"
+}>
+
+<!-- NAVIGATION LANGUAGE MENU - HEADING -->
+<languageMenuHeading 'scegliere un locale'>
+
+<!-- SETTINGS MENU - Fluid -->
+<settingsMenuHeading 'dimensione'>
+<settingsMenuFluid 'fluido'>
+<settingsMenuBoxed 'boxed (990px)'>
+
+<!-- NOTIFICATIONS MENU -->
+<notificationsMenuHeading 'Le tue notifiche'>
+<notificationsTimeFirst "un'ora fa">

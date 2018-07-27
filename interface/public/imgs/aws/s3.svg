@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 72 76" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Icon/S3</title>
+<defs>
+        <linearGradient x1="42.8471684%" y1="0%" x2="42.8471697%" y2="100%" id="S3-icon-gradient">
+            <stop stop-color="#3EFCC9" offset="0%"></stop>
+            <stop stop-color="#8F52F8" offset="100%"></stop>
+        </linearGradient>
+</defs>
+<g id="Icon" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+	<g id="Icon/ES3">
+		<g>
+			<g>
+				<path d="M10.6,63.2l-6-3V15.8l6-3V63.2z M5.6,59.6l4,2V14.5l-4,2V59.6z"/>
+			</g>
+			<g>
+				<path  d="M9.5,63.2V12.8l13.6,6.8v36.8L9.5,63.2z M10.6,14.5v47.1l11.6-5.8V20.2L10.6,14.5z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path  d="M62.5,63.2l-13.6-6.8V19.6l13.6-6.8V63.2z M49.9,55.8l11.6,5.8V14.5l-11.6,5.8V55.8z"/>
+			</g>
+			<g>
+				<path  d="M61.4,63.2V12.8l6,3v44.4L61.4,63.2z M62.5,14.5v47.1l4-2V16.4L62.5,14.5z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<path  d="M36.5,48l-12.3-1.6V29.5L36.5,28V48z M25.2,45.5l10.3,1.3V29.1l-10.3,1.3V45.5z"/>
+				</g>
+				<g>
+					<path  d="M36,48V28l11.8,1.6v16.9L36,48z M37,29.1v17.7l9.8-1.3V30.4L37,29.1z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path  d="M47.8,23L36,20V0.2l11.8,6.1V23z M37,19.2l9.8,2.5V6.9l-9.8-5V19.2z"/>
+				</g>
+				<g>
+					<path  d="M24.2,23V6.3l12.2-6.1V20L24.2,23z M25.2,6.9v14.8l10.1-2.5V1.9L25.2,6.9z"/>
+				</g>
+				<g>
+					<polygon  points="36.4,24.7 24.3,23 24.4,22 36.4,23.7 47.6,22 47.7,23 				"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path  d="M36,75.8l-11.8-6.1V53L36,56V75.8z M25.2,69.1l9.8,5V56.8l-9.8-2.5V69.1z"/>
+				</g>
+				<g>
+					<path  d="M35.7,75.8V56l12.2-3v16.7L35.7,75.8z M36.7,56.8v17.3l10.1-5.1V54.3L36.7,56.8z"/>
+				</g>
+				<g>
+					<polygon  points="47.6,54 35.6,52.3 24.4,54 24.3,53 35.6,51.3 47.7,53 				"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

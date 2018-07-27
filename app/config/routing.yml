@@ -1,0 +1,84 @@
+collector:
+    resource: "@CollectorBundle/Controller/Api/V1/"
+    type:     annotation
+    prefix: "{type}/v1/"
+    requirements:
+        type: "(api|web)"
+    defaults:
+      _format:  json
+
+database_api_v1:
+    resource: "@DatabaseBundle/Controller/Api/V1/"
+    type: annotation
+    prefix: "{type}/v1/"
+    requirements:
+        type: "(api|web)"
+    defaults:
+      _format:  json
+
+system_metrics_api_v1:
+    resource: "@DatabaseBundle/Controller/Api/V1/NoSql/System/MonitoringController.php"
+    type: annotation
+    prefix: "{type}/v1/"
+    requirements:
+        type: "(api|web)"
+    defaults:
+      _format:  json
+
+security_controller:
+    resource: "@FrontendBundle/Controller/Security/"
+    type: annotation
+    prefix: ""
+
+homepage:
+    resource: "@FrontendBundle/Controller/HomeController.php"
+    type: annotation
+    prefix: "/"
+
+frontend_api:
+    resource: "@FrontendBundle/Controller/Api/V1/"
+    type: annotation
+    prefix: "{type}/v1/"
+    requirements:
+        type: "(api|web)"
+
+register_api:
+    resource: "@FrontendBundle/Controller/Api/V1/BetaTesterController.php"
+    type: annotation
+    prefix: "register"
+
+essentials_api_v1:
+    resource: "@EssentialsBundle/Controller/Api/V1/"
+    type: annotation
+    prefix: "{type}/v1/"
+    requirements:
+        type: "(api|web)"
+    defaults:
+      _format:  json
+
+data_source_api_v1:
+    resource: "@DataSourceBundle/Controller/Api/V1/"
+    type: annotation
+    prefix: "{type}/v1/"
+    requirements:
+        type: "(api|web)"
+    defaults:
+      _format:  json
+
+collector_api_v1:
+    resource: "@CollectorBundle/Controller/Api/V1/"
+    type: annotation
+    prefix: "{type}/v1/"
+    requirements:
+        type: "(api|web)"
+    defaults:
+      _format:  json
+
+app.swagger_ui:
+    resource: "@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml"
+    prefix:   /doc/api/v1
+
+app.swagger:
+    path:   /doc/api/v1/doc.json
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger }

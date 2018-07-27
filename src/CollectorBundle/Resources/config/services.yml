@@ -1,0 +1,20 @@
+#services:
+#    discovery.api.mapper:
+#        class: CollectorBundle\Mapper\Discovery\ApiMapper
+#        autowire: true
+#
+#    collect.bucket.builder:
+#        class: CollectorBundle\Collect\CollectBucketBuilder
+#        autowire: true
+#
+#    collect.processor:
+#        class: CollectorBundle\Processor\Processor
+#        arguments: [ "@gearman.taskmanager", "@logger"]
+#
+#    collect.result.sender:
+#        class: CollectorBundle\Collector\ResultSender
+#        autowire: true
+#
+#    collector.collect.job.builder:
+#        class: CollectorBundle\Job\JobBuilder
+#        autowire: true

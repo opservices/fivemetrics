@@ -1,0 +1,24 @@
+#services:
+#    app.system.parameter_resolver:
+#        class: DataSourceBundle\Api\V1\DataSourceCollect\ParametersResolver
+#        autowire: true
+#
+#    app.system.collect.controller:
+#        class: DataSourceBundle\Controller\Api\V1\System\DataSourceCollectController
+#        autowire: true
+#
+#    data.source.api.v1.mapper:
+#        class: DataSourceBundle\Mapper\Api\V1\ResponseMapper
+#        autowire: true
+#        public: true
+#
+#    app.doctrine.data.source.uid.generator:
+#        class: DataSourceBundle\Doctrine\DataSourceCollectUidListener
+#        autowire: true
+#        tags:
+#            - { name: doctrine.event_subscriber }
+#
+#    app.region_provider:
+#        class: DataSourceBundle\Entity\Aws\Region\RegionProvider
+#        autowire: true
+

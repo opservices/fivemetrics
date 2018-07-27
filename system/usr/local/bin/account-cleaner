@@ -1,0 +1,115 @@
+#!/usr/bin/env php
+<?php
+
+use DataSourceBundle\Entity\DataSource\DataSourceCollect;
+use EssentialsBundle\Entity\Account\Account;
+use EssentialsBundle\Entity\TimePeriod\TimePeriodInterface;
+use EssentialsBundle\Entity\TimePeriod\Today;
+use EssentialsBundle\KernelLoader;
+
+require_once("/usr/local/app/bootstrap.php");
+
+define('TRIAL', 'ROLE_TRIAL');
+define('EXIT_SUCCESS', 0);
+define('EXIT_FAILURE', 1);
+
+function usage()
+{
+    print 'Usage: ' . basename(__FILE__) . ' --trial-time <value>' . PHP_EOL;
+}
+
+function help()
+{
+    usage();
+
+    print <<<EOF
+This script removes the trial permission and disable collects from user accounts
+with trial time expired. The time starts to count after onboarding conclusion.
+
+General Options:
+    -t, --trial-time          The trial time in seconds.
+                                  * 30 days: 2592000
+                                  * 15 days: 1296000
+                                  * 7  days: 604800
+
+Extra Options:
+
+    -h, --help                Display this help.
+
+EOF;
+}
+
+function validateOptions(array &$opts)
+{
+    (isset($opts['trial-time'])) ?: $opts['trial-time'] = null;
+
+    $opts['trial-time'] = $opts['t'] ?? $opts['trial-time'];
+    $opts['h'] = $opts['help'] = ((isset($opts['h'])) || (isset($opts['help'])));
+
+    return (! is_null($opts['trial-time']));
+}
+
+function main()
+{
+    $options = getopt('ht:', [
+        'help',
+        'trial-time:',
+    ]);
+
+    if (! validateOptions($options)) {
+        usage();
+        print "Try '" . basename(__FILE__) . " --help' for more information." . PHP_EOL;
+        exit(EXIT_FAILURE);
+    }
+
+    if ($options['help']) {
+        help();
+        exit(EXIT_SUCCESS);
+    }
+
+    $tailPeriod = $options['trial-time'];
+
+    $container = KernelLoader::load()->getContainer();
+    $em = $container->get('doctrine')
+        ->getManager();
+
+    $accountRepo = $em->getRepository(Account::class);
+    $collectRepo = $em->getRepository(DataSourceCollect::class);
+
+    $accounts = $accountRepo->findAll();
+    $today = (new Today())->getStart(TimePeriodInterface::UNIX_TIMESTAMP);
+
+
+    foreach ($accounts as $account) {
+        /** @var Account $account */
+
+        $onboardingDone = $account->getOnboardingDoneAt();
+
+        if ((is_null($onboardingDone)) || (!$account->hasRole(TRIAL))) {
+            continue;
+        }
+
+        $endTime = $onboardingDone->getTimestamp() + $tailPeriod;
+        if ($today < $endTime) {
+            continue;
+        }
+
+        $account->removeRole(TRIAL);
+
+        $collects = $collectRepo->findBy([
+            'account' => $account,
+            'isEnabled' => true,
+        ]);
+
+        foreach ($collects as $collect) {
+            /** @var DataSourceCollect $collect */
+            $collect->setIsEnabled(false);
+        }
+    }
+
+    $em->flush();
+
+    exit(EXIT_SUCCESS);
+}
+
+main();

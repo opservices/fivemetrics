@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="64px" viewBox="0 0 62 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Untitled</title>
+    <defs></defs>
+    <g id="Icon" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <circle id="Oval" cx="31" cy="30.75" r="30.43"></circle>
+        <rect id="Rectangle-path" x="5.42" y="21.87" width="11.05" height="17.76"></rect>
+        <rect id="Rectangle-path" x="40.73" y="9.74" width="9.86" height="9.86"></rect>
+        <rect id="Rectangle-path" x="40.73" y="25.82" width="9.86" height="9.86"></rect>
+        <rect id="Rectangle-path" x="40.73" y="41.91" width="9.86" height="9.86"></rect>
+        <polygon id="Shape" points="38.01 32.05 39.65 31.24 40.73 30.71 39.65 30.17 38.19 29.45 33.79 27.28 33.79 29.45 20.58 29.45 35.59 19.84 36.78 21.68 39.27 17.48 40 16.24 40.73 15.02 39.33 15.19 37.74 15.37 33.04 15.92 34.17 17.66 15.76 29.45 13.73 30.75 16.15 32.29 34.17 43.84 33.04 45.58 37.74 46.13 39.33 46.31 40.73 46.48 40 45.26 39.27 44.02 36.78 39.82 35.59 41.66 20.58 32.05 33.79 32.05 33.79 34.14"></polygon>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+@import "variables";
+@import "theme_base";
+
+@import "base";
+@import "colors";
+//@import "print";
+//@import "vendor";
+
+@import "mixins";
+@import "functions";
+
+/* Themes */
+@import "themes/majortom";
+@import "theme_base";
+@import "theme";
+
+@import "fonts";
+
+/* Page styles */
+@import "pages/home";
+@import "pages/LandingPage";
+@import "pages/OnBoarding";
+/* Components */
+//@import "components/gridstack";
+
+@import "components/grid";

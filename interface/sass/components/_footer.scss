@@ -1,0 +1,22 @@
+@function footer-maker($theme_list) {
+
+	$footer: (
+    	bg: $primary-color,
+        color: #CCD6DF
+    );
+
+	$temp_footer: $footer;
+	$footer: ();
+
+	@each $style, $value in $temp_footer {
+		$verified_style: verify_theme_style(
+			get($theme_list, footer),
+			$temp_footer,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$footer: map-collect($footer, $temp_map);
+	}
+
+  	@return $footer;
+}

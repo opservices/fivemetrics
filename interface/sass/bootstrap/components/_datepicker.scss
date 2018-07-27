@@ -1,0 +1,12 @@
+@mixin theme-datepicker($list) {
+  .datepicker table tr td.active,
+  .datepicker table tr td.active:hover,
+  .datepicker table tr td.active.disabled,
+  .datepicker table tr td.active.disabled:hover,
+  .datepicker table tr td span.active,
+  .datepicker table tr td span.active:hover,
+  .datepicker table tr td span.active.disabled,
+  .datepicker table tr td span.active.disabled:hover {
+    background: get($list, theme, bg) !important;
+  }
+}

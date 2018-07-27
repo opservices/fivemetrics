@@ -1,0 +1,296 @@
+#!/usr/bin/env php
+<?php
+
+use CollectorBundle\Collect\CollectBucket;
+use CollectorBundle\Collect\CollectBucketCollection as CollectBuckets;
+use CollectorBundle\Collect\CollectBucketBuilder;
+use EssentialsBundle\Collection\Tag\TagCollection;
+use EssentialsBundle\Entity\Tag\Tag;
+use EssentialsBundle\KernelLoader;
+use EssentialsBundle\Profiler\Enum;
+use GearmanBundle\Job\Job;
+use GearmanBundle\TaskManager\TaskManager;
+use Psr\Log\LoggerInterface;
+use Symfony\Bridge\Monolog\Logger;
+use EssentialsBundle\Profiler\Profiler;
+use Aws\Sqs\SqsClient;
+use Aws\Credentials\Credentials;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
+
+
+/**
+ * @codingStandardsIgnoreFile
+ * @codeCoverageIgnore
+ */
+
+require_once("/usr/local/app/bootstrap.php");
+
+declare(ticks=1);
+
+class CollectorDaemon
+{
+    /**
+     *  It's the time between each collect search.
+     */
+    const SLEEP_TIME = 30;
+
+    /**
+     * @var CollectBucketBuilder
+     */
+    protected $builder;
+
+    /**
+     * @var TaskManager
+     */
+    protected $taskManager;
+
+    /**
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    /**
+     * @var float
+     */
+    protected $timer;
+
+    /**
+     * @var ContainerInterface
+     */
+    protected $container = null;
+
+    /**
+     * CollectorDaemon constructor.
+     *
+     */
+    public function __construct(ContainerInterface $container)
+    {
+        $this->builder = $container->get('collect.bucket.builder');
+        $this->taskManager = $container->get('gearman.taskmanager');
+        $this->logger = $container->get('logger');
+        $this->container = $container;
+    }
+
+    protected function sigHandler($signal)
+    {
+        switch ($signal) {
+            case SIGHUP:  // Reload Configuration
+                $this->log('Reloading configuration...', Logger::ALERT);
+                $this->log('Cleaning Symfony\'s production cache...', Logger::INFO);
+
+                system('/usr/local/bin/php /usr/local/app/bin/console cache:clear --env prod > /dev/null');
+            case SIGUSR1: // Custom signal 1
+            case SIGUSR2: // Custom signal 2
+            case SIGINT:  // Ctrl+C
+            case SIGTERM: // kill
+                $this->log('Collector daemon stopped.', Logger::ALERT);
+        }
+
+        exit(0);
+    }
+
+    /**
+     * @return CollectorDaemon
+     */
+    protected function setSignals(): CollectorDaemon
+    {
+        pcntl_signal(SIGUSR1, function ($signal) {
+            $this->sigHandler($signal);
+        });
+
+        pcntl_signal(SIGTERM, function ($signal) {
+            $this->sigHandler($signal);
+        });
+
+        pcntl_signal(SIGHUP, function ($signal) {
+            $this->sigHandler($signal);
+        });
+
+        return $this;
+    }
+
+    /**
+     * @return CollectorDaemon
+     */
+    protected function redirectStds(): CollectorDaemon
+    {
+        fclose(STDIN);
+        fopen('/dev/null', 'r');
+
+        fclose(STDOUT);
+        fopen('/dev/null', 'w');
+
+        fclose(STDERR);
+        fopen('/dev/null', 'w');
+
+        return $this;
+    }
+
+    /**
+     * @param string $msg
+     * @param int $level
+     * @return CollectorDaemon
+     */
+    protected function log(string $msg, int $level = Logger::INFO): CollectorDaemon
+    {
+        $this->logger->log($level, $msg);
+        return $this;
+    }
+
+    /**
+     * @param CollectBuckets $collectBuckets
+     * @return CollectorDaemon
+     */
+    protected function logReceivedCollects(CollectBuckets $collectBuckets): CollectorDaemon
+    {
+        $logLevel = ($this->logger->isHandling(Logger::DEBUG))
+            ? Logger::DEBUG
+            : Logger::INFO;
+
+        foreach ($collectBuckets as $bucket) {
+            /** @var CollectBucket $bucket */
+            $uid = $bucket->getAccount()->getUid();
+
+            $collects = ($logLevel == Logger::DEBUG)
+                ? ' collects: ' . json_encode($bucket->getCollects())
+                : ' collects total: ' . count($bucket->getCollects());
+
+            $this->log('account: ' . $uid . $collects);
+        }
+
+        return $this;
+    }
+
+    protected function getProfilerInstance(): Profiler
+    {
+        $tags = new TagCollection([
+            new Tag('origin', Enum::COLLECT),
+            new Tag('parent', Enum::COLLECTOR),
+            new Tag('event', null),
+        ]);
+
+        return new Profiler($tags);
+    }
+
+    public function wait(): CollectorDaemon
+    {
+        $this->log('Waiting ' . self::SLEEP_TIME . ' seconds ...');
+        sleep(self::SLEEP_TIME);
+        return $this;
+    }
+
+    /**
+     * @param Profiler|null $collectProfiler
+     *
+     * @return CollectBuckets
+     */
+    protected function requestCollects(Profiler $collectProfiler = null): CollectBuckets
+    {
+        if (!is_null($collectProfiler)) {
+            $collectProfiler->resetTimers(true);
+            $event = md5(microtime(true) . random_bytes(4));
+            $collectProfiler->getTags()->find('event')->setValue($event);
+        }
+
+        $collects = $this->getCollectsFromLocalhost();
+        return $this->builder->factory($collects, false, $collectProfiler);
+    }
+
+    private function getCollectsFromLocalhost()
+    {
+        $request = Request::create(
+            '/web/v1/system/collect',
+            'GET',
+            [ 'isEnabled' => true ]
+        );
+
+        $controller = $this->container->get("app.system.collect.controller");
+        $controller->setContainer($this->container);
+        $response = $controller->listCollectsAction($request);
+        $collects = json_decode($response->getContent(), $toAssoc = true);
+
+        return $collects ?: [];
+    }
+
+    public function run()
+    {
+        $this->redirectStds();
+        $this->setSignals();
+
+        $this->log('Starting collector daemon...', Logger::ALERT);
+
+        $tags = new TagCollection([
+            new Tag('origin', Enum::COLLECTOR),
+            new Tag('event', ''),
+        ]);
+        $collectProfiler = $this->getProfilerInstance();
+
+        while (true) {
+            $collectBuckets = $this->requestCollects($collectProfiler);
+
+            if ($collectBuckets->isEmpty()) {
+                $this->wait();
+                continue;
+            }
+
+            $this->logReceivedCollects($collectBuckets);
+            if ($collectProfiler) {
+                $event = $collectProfiler->getTags()->find('event')->getValue();
+                $tags->find('event')->setValue($event);
+            }
+
+            foreach ($collectBuckets as $bucket) {
+                /** @var CollectBucket $bucket */
+                $account = $bucket->getAccount();
+
+                ($tags->find('account'))
+                    ? $tags->find('account')->setValue($account->getUid())
+                    : $tags->add(new Tag('account', $account->getUid()));
+
+                $this->taskManager->getClient()->addTask(
+                    'collector',
+                    serialize(new Job(
+                        $bucket->getAccount(),
+                        $bucket->getTime(),
+                        $bucket,
+                        new Profiler($tags, true)
+                    ))
+                );
+            }
+
+            if (!$this->taskManager->getClient()->runTasks()) {
+                $this->logger->log(
+                    Logger::ERROR,
+                    $this->taskManager->getClient()->error()
+                );
+            }
+        }
+    }
+}
+
+function writePid()
+{
+    $pidFile = sprintf('/var/run/%s.pid', basename(__FILE__));
+
+    $fp = fopen($pidFile, 'w');
+    $pid = posix_getpid();
+    fprintf($fp, $pid);
+    fclose($fp);
+}
+
+$pid = pcntl_fork();
+if ($pid) {
+    exit(0);
+}
+
+writePid();
+
+$container = KernelLoader::load()->getContainer();
+$dispatcher = $container->get('error.dispatcher');
+
+try {
+    (new CollectorDaemon($container))->run();
+} catch (\Throwable $e) {
+    $dispatcher->send($e);
+}

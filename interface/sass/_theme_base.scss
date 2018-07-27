@@ -1,0 +1,243 @@
+@import "bootstrap/mixins/sass-list-maps";
+@import "bootstrap/theme-mixin";
+
+@import "components/type";
+@import "components/theme";
+@import "components/body";
+@import "components/tag";
+@import "components/title";
+@import "components/panel";
+@import "components/sidebar";
+@import "components/header";
+@import "components/footer";
+@import "components/link";
+@import "components/form";
+
+@mixin theme-maker($name, $list) {
+
+  $theme:   base-maker($list);
+  $body:    body-maker($list);
+  $header:  header-maker($list);
+  $tag:     tag-maker($list);
+  $panel:   panel-maker($list);
+  $form:    form-maker($list);
+  $type:    type-maker($list);
+  $sidebar: sidebar-maker($list);
+  $footer:  footer-maker($list);
+  $link:    link-maker($list);
+
+
+  @include theme-mixin($name, (
+    theme: (
+      bg:                       get($theme, bg),
+      color:                    get($theme, color)
+    ),
+    body: (
+      bg:                       get($body, bg),
+      color:                    get($body, color)
+    ),
+    header: (
+      bg:                       get($header, bg),
+      color:                    get($header, color),
+      hover-color:              get($header, hover-color),
+
+      logout: (
+        bg:                     get($header, logout, bg),
+        color:                  get($header, logout, color),
+        hover-bg:               get($header, logout, hover-bg),
+      ),
+
+      sidebar-btn: (
+        bg:                     get($header, sidebar-btn, bg),
+        color:                  get($header, sidebar-btn, color),
+        hover-bg:               get($header, sidebar-btn, hover-bg)
+      ),
+
+      divider: (
+        color:                  get($header, divider, color)
+      )
+    ),
+    sidebar: (
+      bg:                       get($sidebar, bg),
+      width:                    get($sidebar, width),
+      avatar: (
+        bg:                     get($sidebar, avatar, bg),
+      ),
+      controls: (
+        bg:                     get($sidebar, controls, bg),
+        btn: (
+          color:                get($sidebar, controls, btn, color),
+          border:               get($sidebar, controls, btn, border),
+          active-bg:            get($sidebar, controls, btn, active-bg),
+          active-color:         get($sidebar, controls, btn, active-color)
+        )
+      )
+    ),
+    link: (
+      color:                    get($link, color),
+      bg:                       get($link, bg)
+    ),
+    panel: (
+      bg:                       get($panel, bg),
+      bgimg:                    get($panel, bgimg),
+      op:                       get($panel, op),
+      borders: (
+        borderall:              get($panel, borders, borderall),
+        bordertop:              get($panel, borders, bordertop),
+        borderright:            get($panel, borders, borderright),
+        borderbottom:           get($panel, borders, borderbottom),
+        borderleft:             get($panel, borders, borderleft)
+      ),
+      rad:                      get($panel, rad)
+    ),
+    form-control: (
+      border:                   get($form, border),
+      active: (
+        border:                 get($form, active, border)
+      )
+    ),
+    tag: (
+      bg:                       get($tag, bg),
+      borders: (
+        borderall:              get($tag, borders, borderall),
+        bordertop:              get($tag, borders, bordertop),
+        borderright:            get($tag, borders, borderright),
+        borderbottom:           get($tag, borders, borderbottom),
+        borderleft:             get($tag, borders, borderleft)
+      ),
+      color:                    get($tag, color),
+      weight:                   get($tag, weight),
+      size:                     get($tag, size),
+      case:                     get($tag, case),
+      hover:                    get($tag, hover),
+      rad:                      get($tag, rad)
+    ),
+    footer: (
+      bg:                       get($footer, bg),
+      color:                    get($footer, color)
+    ),
+    type: (
+      sizeA:                    get($type, sizeA),
+      sizeB:                    get($type, sizeB),
+      sizeC:                    get($type, sizeC),
+      sizeD:                    get($type, sizeD),
+      sizeE:                    get($type, sizeE),
+      sizeF:                    get($type, sizeF),
+      colorA:                   get($type, colorA),
+      colorB:                   get($type, colorB),
+      colorC:                   get($type, colorC),
+      colorD:                   get($type, colorD),
+      colorE:                   get($type, colorE),
+      colorF:                   get($type, colorF),
+      caseA:                    get($type, caseA),
+      caseB:                    get($type, caseB),
+      caseC:                    get($type, caseC),
+      caseD:                    get($type, caseD),
+      caseE:                    get($type, caseE),
+      caseF:                    get($type, caseF),
+      dashlet: (
+        title: (
+          color:                get($type, dashlet, title, color),
+          size:                 get($type, dashlet, title, size),
+          style:                get($type, dashlet, title, style),
+          weight:               get($type, dashlet, title, weight)
+        ),
+        mainnumber: (
+          size:                 get($type, dashlet, mainnumber, size),
+          color:                get($type, dashlet, mainnumber, color),
+          style:                get($type, dashlet, mainnumber, style),
+          weight:               get($type, dashlet, mainnumber, weight)
+        ),
+        secondarynumber: (
+          size:                 get($type, dashlet, secondarynumber, size),
+          color:                get($type, dashlet, secondarynumber, color),
+          style:                get($type, dashlet, secondarynumber, style),
+          weight:               get($type, dashlet, secondarynumber, weight)
+        ),
+        mainunit: (
+          size:                 get($type, dashlet, mainunit, size),
+          color:                get($type, dashlet, mainunit, color),
+          style:                get($type, dashlet, mainunit, style),
+          weight:               get($type, dashlet, mainunit, weight)
+        ),
+        secondaryunit: (
+          size:                 get($type, dashlet, secondaryunit, size),
+          color:                get($type, dashlet, secondaryunit, color),
+          style:                get($type, dashlet, secondaryunit, style),
+          weight:               get($type, dashlet, secondaryunit, weight)
+        )
+      )
+    )
+  ));
+
+
+
+
+  .#{$name} {
+
+    h4 {
+      &.dashlet-title {
+        color:                  get($type, dashlet, title, color) !important;
+        font-size:              get($type, dashlet, title, size) !important;
+        font-style:             get($type, dashlet, title, style) !important;
+        font-weight:            get($type, dashlet, title, weight) !important;
+        text-transform:         get($type, dashlet, title, case) !important;
+      }
+
+      &.main-number {
+        font-weight:            get($type, dashlet, mainnumber, weight) !important;
+        font-size:              get($type, dashlet, mainnumber, size);
+        font-style:             get($type, dashlet, mainnumber, style) !important;
+        text-transform:         get($type, dashlet, mainnumber, case) !important;
+        color:                  get($type, dashlet, mainnumber, color) !important;
+      }
+    }
+    h5 {
+      &.main-label {
+        font-size:              get($type, dashlet, mainunit, size) !important;
+        font-weight:            get($type, dashlet, mainunit, weight) !important;
+        font-style:             get($type, dashlet, mainunit, style) !important;
+        text-transform:         get($type, dashlet, mainunit, case) !important;
+        color:                  get($type, dashlet, mainunit, color) !important;
+      }
+
+      span {
+        &.secondary-number {
+          font-size:            get($type, dashlet, secondarynumber, size) !important;
+          font-weight:          get($type, dashlet, secondarynumber, weight) !important;
+          font-style:           get($type, dashlet, secondarynumber, style) !important;
+          text-transform:       get($type, dashlet, secondarynumber, case) !important;
+          color:                get($type, dashlet, secondarynumber, color) !important;
+        }
+
+        &.secondary-unit {
+          font-size:            get($type, dashlet, secondaryunit, size) !important;
+          font-weight:          get($type, dashlet, secondaryunit, weight) !important;
+          text-transform:       get($type, dashlet, secondaryunit, case) !important;
+          font-style:           get($type, dashlet, secondaryunit, style) !important;
+          color:                get($type, dashlet, secondaryunit, color) !important;
+        }
+      }
+    }
+
+    .secondary-number {
+        color:                get($type, dashlet, secondarynumber, color) !important;
+    }
+
+    .secondary-unit {
+        color:                get($type, dashlet, secondaryunit, color) !important;
+    }
+
+
+
+    #dashboard-header {
+      background-color: get($body, bg);
+      color: get($body, color);
+    }
+
+    .grid-stack-item-content {
+      @extend .rubix-panel-container;
+    }
+  }
+
+}

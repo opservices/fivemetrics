@@ -1,0 +1,80 @@
+{# This file is part of the API Platform project.
+
+(c) Kévin Dunglas <dunglas@gmail.com>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code. #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NelmioApiDocBundle</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{{ asset('bundles/nelmioapidoc/swagger-ui/swagger-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/nelmioapidoc/style.css') }}">
+
+    {# json_encode(65) is for JSON_UNESCAPED_SLASHES|JSON_HEX_TAG to avoid JS XSS #}
+    <script id="swagger-data" type="application/json">{{ swagger_data|json_encode(65)|raw }}</script>
+    <style>
+        .parameters-col_description p, .parameters-col_description div, .parameters-col_description span, .parameters-col_description h1, .parameters-col_description h2, .parameters-col_descriptionh3, .parameters-col_description h4, .parameters-col_description h5, .parameters-col_description h6 {
+            font-family: Open Sans,sans-serif;
+            color: #3b4151;
+            line-height: 1.2;
+        }
+        .parameters-col_description h4 {
+            font-size: 15.5px;
+            margin: 20px 0 10px;
+            border-top: 1px solid #888;
+            padding-top: 12px;
+        }
+        .parameters-col_description h5 {
+            font-size: 14px;
+            margin: 8px 0 7px;
+        }
+        .parameters-col_description h6 {
+            font-size: 12px;
+            margin: 6px 0 4px;
+        }
+        .parameters-col_description p, .parameters-col_description span {
+            font-size: 14px;
+        }
+        code {
+            display: block;
+            font-size: 12px;
+            margin: 8px 0 0;
+            line-height: 2;
+            padding: 10px 14px;
+            word-wrap: break-word;
+            word-break: break-all;
+            word-break: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+            white-space: pre-wrap;
+            border-radius: 4px;
+            background: #41444e;
+            overflow-wrap: break-word;
+            font-family: Source Code Pro,monospace;
+            font-weight: 600;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a id="logo" href="https://github.com/nelmio/NelmioApiDocBundle"><img src="{{ asset('bundles/nelmioapidoc/logo.png') }}" alt="NelmioApiDocBundle"></a>
+</header>
+
+<div id="swagger-ui" class="api-platform"></div>
+
+<div class="swagger-ui-wrap" style="margin-top: 20px; margin-bottom: 20px;">
+    &copy; 2017 <a href="https://api-platform.com">Api-Platform</a>
+</div>
+
+<script src="{{ asset('bundles/nelmioapidoc/swagger-ui/swagger-ui-bundle.js') }}"></script>
+<script src="{{ asset('bundles/nelmioapidoc/swagger-ui/swagger-ui-standalone-preset.js') }}"></script>
+<script src="{{ asset('bundles/nelmioapidoc/init-swagger-ui.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 72 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Glacier</title>
+    <defs>
+        <linearGradient x1="42.8471684%" y1="0%" x2="42.8471697%" y2="100%" id="Glacier-icon-gradient">
+            <stop stop-color="#3EFCC9" offset="0%"></stop>
+            <stop stop-color="#8F52F8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Icon" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+	    <g id="Icon/Glacier">
+			<g>
+				<g>
+					<path class="st0" d="M63.4,63l-13.9-6.7V19.7L63.4,13V63z M50.5,55.7l12,5.8V14.5l-12,5.8V55.7z"/>
+				</g>
+				<g>
+					<path class="st0" d="M62.8,63V13l5.9,2.9V60L62.8,63z M63.8,14.6v46.9l4-2V16.6L63.8,14.6z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M9.2,63L3.3,60V16L9.2,13V63z M4.2,59.4l4,2V14.6l-4,2V59.4z"/>
+				</g>
+				<g>
+					<path class="st0" d="M8.6,63V13l13.9,6.7v36.5L8.6,63z M9.6,14.5v46.9l12-5.8V20.3L9.6,14.5z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st0" d="M36.3,75.9l-12.2-6.1V6.2l12.2-6.1V75.9z M25.1,69.2l10.3,5.1V1.7L25.1,6.8V69.2z"/>
+				</g>
+				<g>
+					<path class="st0" d="M35.7,75.9V0.1l12.2,6.1v63.5L35.7,75.9z M36.7,1.7v72.7L47,69.2V6.8L36.7,1.7z"/>
+				</g>
+			</g>
+       	</g>
+    </g>
+</svg>

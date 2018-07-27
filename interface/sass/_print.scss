@@ -1,0 +1,18 @@
+@media print {
+  #sidebar {
+    display: none !important;
+  }
+  #navbar {
+    display: none !important;
+  }
+  #body {
+    background: white;
+    left: 0 !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+  .rubix-panel-controls {
+    display: none !important;
+  }
+}

@@ -1,0 +1,70 @@
+@function type-maker($theme_list) {
+
+	$type: (
+    	sizeA: 10px,
+    	sizeB: 10px,
+    	sizeC: 10px,
+    	sizeD: 10px,
+    	sizeE: 10px,
+    	sizeF: 10px,
+    	colorA: #ffffff,
+    	colorB: #ffffff,
+    	colorC: #ffffff,
+    	colorD: #ffffff,
+    	colorE: #ffffff,
+    	colorF: #ffffff,
+    	caseA: none,
+    	caseB: none,
+    	caseC: none,
+    	caseD: none,
+    	caseE: none,
+    	caseF: none,
+        dashlet: (
+            title: (
+              size: 18px,
+              color: #ffffff,
+              style: normal,
+              case: none
+            ),
+            mainnumber: (
+              size: 50px,
+              color: #ffffff,
+              style: normal,
+              case: none
+            ),
+            secondarynumber: (
+              size: 15px,
+              color: #ffffff,
+              style: normal,
+              case: none
+            ),
+            mainunit: (
+              size: 30px,
+              color: #ffffff,
+              style: normal,
+              case: none
+            ),
+            secondaryunit: (
+              size: 15px,
+              color: #ffffff,
+              style: normal,
+              case: none
+            )
+        )
+    );
+
+	$temp_type: $type;
+	$type: ();
+
+	@each $style, $value in $temp_type {
+		$verified_style: verify_theme_style(
+			get($theme_list, type),
+			$temp_type,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$type: map-collect($type, $temp_map);
+	}
+
+  	@return $type;
+}

@@ -1,0 +1,36 @@
+@mixin theme-panel($list) {
+  .rubix-panel-container {
+    background: get($list, panel, bg);
+    background-image: get($list, panel, bgimg);
+    opacity: get($list, panel, op);
+    border-radius: get($list, panel, rad);
+    border: get($list, panel, borders, borderall);
+    border-top: get($list, panel, borders, bordertop);
+    border-right: get($list, panel, borders, borderright);
+    border-bottom: get($list, panel, borders, borderbottom);
+    border-left: get($list, panel, borders, borderleft);
+    padding: 15px;
+
+
+    &.bordered {
+      border: get($list, panel, border);
+      // box-shadow: 0px 2px 0px 0px rgba(get($list, components, panel, border), 0.5);
+    }
+
+    &.noOverflow {
+      overflow: visible;
+    }
+
+    & h1, & .h1 { color: get($list, type, h1); }
+    & h2, & .h2 { color: get($list, type, h2); }
+    & h3, & .h3 { color: get($list, type, h3); }
+    & h4, & .h4 { color: get($list, type, h4); }
+    & h5, & .h5 { color: get($list, type, h5); }
+    & h6, & .h6 { color: get($list, type, h6); }
+  }
+
+  .rubix-panel-controls {
+    color: get($list, body, color);
+  }
+
+}

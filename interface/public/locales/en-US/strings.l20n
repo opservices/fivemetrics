@@ -1,0 +1,24 @@
+<!-- USEFUL TO KNOW CURRENTLY SELECTED LOCALE -->
+<selectedFlag 'United-States'>
+
+<!-- NAVIGATION LANGUAGE MENU -->
+<languageMenu[$lang] {
+  enUS: 'English - U.S.',
+  fr: 'French',
+  it: 'Italian',
+  ge: 'German',
+  ar: 'Arabic',
+  ch: 'Chinese'
+}>
+
+<!-- NAVIGATION LANGUAGE MENU - HEADING -->
+<languageMenuHeading 'CHOOSE A LOCALE'>
+
+<!-- SETTINGS MENU - Fluid -->
+<settingsMenuHeading 'Dimension'>
+<settingsMenuFluid 'Fluid'>
+<settingsMenuBoxed 'Boxed (990px)'>
+
+<!-- NOTIFICATIONS MENU -->
+<notificationsMenuHeading 'Your notifications'>
+<notificationsTimeFirst 'an hour ago'>

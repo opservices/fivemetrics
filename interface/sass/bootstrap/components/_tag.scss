@@ -1,0 +1,84 @@
+.left-tag, .right-tag {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+
+  &:before {
+    top: 0;
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.left-tag {
+  margin-left: 12px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 0 10px 0 8px;
+  margin-bottom: $line-height-computed / 2;
+
+  &:before {
+    left: -12px;
+    float: left;
+    border-right-color: inherit;
+    border-width: 12px 12px 12px 0;
+  }
+}
+
+.right-tag {
+  margin-right: 12px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 0 8px 0 10px !important;
+  margin-bottom: $line-height-computed / 2;
+
+  &:before {
+    right: -12px;
+    float: right;
+    border-left-color: inherit;
+    border-width: 12px 0 12px 12px;
+  }
+}
+
+.terms {
+  height: 200px;
+  overflow: auto;
+  background: #fff;
+  padding: $line-height-computed;
+}
+
+
+@mixin theme-tags($list) {
+  .filter-group {
+    float: left;
+    width: 100%;
+  }
+
+  .tags {
+    background: get($list, tag, bg) !important;
+    //border: get($list, tag, borders, borderall) !important;
+    border-top: get($list, tag, borders, bordertop) !important;
+    border-right: get($list, tag, borders, borderright) !important;
+    border-bottom: get($list, tag, borders, borderbottom) !important;
+    border-left: get($list, tag, borders, borderleft) !important;
+    color: get($list, tag, color) !important;
+    border-radius: get($list, tag, rad) !important;
+    font-weight: get($list, tag, weight) !important;
+    text-transform: get($list, tag, case) !important;
+    font-size: get($list, tag, size) !important;
+  }
+
+  .tags:before {
+    border: 0 !important;
+  }
+
+  .tags:hover {
+    background-color: get($list, tag, hover) !important;
+  }
+
+}

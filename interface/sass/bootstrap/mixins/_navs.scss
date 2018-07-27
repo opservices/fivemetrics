@@ -1,0 +1,9 @@
+@mixin nav-variant($color, $hover-color) {
+  > li.active > a,
+  > rubix-menu > li.active > a,
+  > rubix-nav-item > li.active > a {
+    color: $hover-color;
+    background: $color;
+    border-color: $color;
+  }
+}

@@ -1,0 +1,16 @@
+#services:
+#    app.security.login_form_authenticator:
+#        class: FrontendBundle\Security\LoginFormAuthenticator
+#        autowire: true
+#
+#    app.doctrine.hash_password_listener:
+#        class: FrontendBundle\Doctrine\HashPasswordListener
+#        autowire: true
+#        tags:
+#            - { name: doctrine.event_subscriber }
+#
+#    app.doctrine.account_uid_generator:
+#        class: FrontendBundle\Doctrine\AccountUidListener
+#        autowire: true
+#        tags:
+#            - { name: doctrine.event_subscriber }

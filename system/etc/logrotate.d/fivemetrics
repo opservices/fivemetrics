@@ -1,0 +1,13 @@
+/var/log/app/*.log {
+    daily
+    rotate 5
+    nocompress
+    dateext
+    dateformat -%Y%m%d
+    missingok
+    postrotate
+        /bin/systemctl stop collector
+        /bin/systemctl start collector
+    endscript
+    create 0644 apache apache
+}

@@ -1,0 +1,38 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host:     127.0.0.1
+    database_port:     3306
+    database_name:     fivemetrics
+    database_user:     system
+    database_password: fivemetrics
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport: gmail
+    mailer_host: 127.0.0.1
+    mailer_user: user@email.com
+    mailer_password: ''
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    # Default doctrine cache directory
+    doctrine_cache_dir: /tmp/doctrine-cache/
+
+    # InfluxDB
+    influx_host:        127.0.0.1
+    influx_database:    'app_history'
+
+    # Set it to true to activate the UDP connection
+    udp:                  false
+    udp_port:             4444
+    http_port:            8086
+    username:             ''
+    password:             ''
+
+    doctrine_cache.redis.host: localhost
+    doctrine_cache.redis.port: 6379
+
+    doctrine_migrations.dir_name: "%kernel.root_dir%/DoctrineMigrations"

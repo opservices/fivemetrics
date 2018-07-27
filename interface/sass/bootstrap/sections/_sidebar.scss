@@ -1,0 +1,282 @@
+@mixin theme-sidebar($list) {
+  #sidebar {
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    position: fixed;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    left: - get($list, sidebar, width);
+    width: get($list, sidebar, width);
+    //background: get($list, sidebar, bg);
+
+    @media (min-width: $screen-sm-min) {
+      left: 0;
+    }
+
+    #avatar {
+      height: 75px;
+      background: get($list, sidebar, avatar, bg);
+
+      img {
+        top: 17px;
+        position: relative;
+      }
+    }
+
+    #avatar-col, #avatar-desc {
+      margin-left: -5px;
+    }
+
+    #logout-progress {
+      margin: 0;
+      top: 30px;
+      height: 4px;
+      width: 115px;
+      border-radius: 0;
+      position: relative;
+      background: get($list, sidebar, controls, bg);
+    }
+
+    #logout-icon {
+      top: 3px;
+      float: right;
+      font-size: 18px;
+      position: relative;
+      color: get($list, sidebar, controls, bg);
+    }
+
+    .sidebar-controls-container {
+      width: get($list, sidebar, width);
+      height: 35px;
+      display: table;
+      visibility: $sidebar-controls-visibility;
+      background: get($list, sidebar, controls, bg);
+
+      >.sidebar-controls {
+        display: table-row;
+
+        >.sidebar-control-btn {
+          border: none;
+          outline: none;
+          font-size: 16px;
+          cursor: pointer;
+          background: none;
+          text-align: center;
+          display: table-cell;
+          vertical-align: middle;
+          border-right: 1px solid get($list, sidebar, controls, btn, border);
+
+          >a {
+            outline: none;
+            color: get($list, sidebar, controls, btn, color);
+            &:hover,&:focus {
+              border: none;
+            }
+          }
+
+          &.active {
+            background: get($list, sidebar, controls, btn, active-bg) !important;
+            >a {
+              color: get($list, sidebar, controls, btn, active-color);
+            }
+          }
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.04);
+          }
+        }
+      }
+    }
+
+    .sidebar-item {
+      height: 35px;
+      background: #1F282D;
+    }
+
+    #sidebar-container {
+      bottom: 0;
+      width: get($list, sidebar, width);
+      overflow: hidden;
+      position: absolute;
+
+      @if $sidebar-controls-visibility == hidden {
+        top: 75px;
+      } @else {
+        top: 110px;
+      }
+
+      .sidebar {
+        top: 0;
+        bottom: 0;
+        width: get($list, sidebar, width);
+        overflow: hidden;
+        position: absolute;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .sidebar-header {
+    line-height: 1;
+    font-size: 12px;
+    padding-top: 25px;
+    font-weight: bold;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    color: rgba(get($list, body, color), 0.4);
+  }
+
+  .sidebar-nav > .sidebar-header {
+    padding-left: 25px;
+  }
+
+  .sidebar-nav {
+    padding: 0;
+    list-style: none;
+    margin-left: $line-height-computed;
+    border-left: 2px solid rgba(#3B4648, 0.5);
+
+    >li {
+      height: 45px;
+      outline: none;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+
+      >a {
+        height: 45px;
+        border: none;
+        outline: none;
+        color: #89949B;
+        display: block;
+        font-size: 14px;
+        line-height: 14px;
+        text-decoration: none;
+        padding: 15px 0px 15px $line-height-computed;
+
+        > .rubix-icon,
+        > rubix-icon > .rubix-icon {
+          width: 16px;
+          height: 17px;
+          vertical-align: top;
+          display: inline-block;
+        }
+
+        > .name {
+          line-height: 16px;
+          vertical-align: top;
+
+          >span>.label,
+          >.label {
+            float: right;
+            margin-top: -3px;
+            padding: 5px 10px;
+            margin-right: 30px;
+          }
+        }
+
+        > .rubix-icon ~ .name,
+        > rubix-icon ~ .name {
+          margin-left: 10px;
+        }
+
+        &:hover,&:focus {
+          border: none;
+          background: rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &:hover, &.open {
+        &:before {
+          display: none;
+        }
+      }
+
+      &.open {
+        height: 100%;
+
+        > a {
+          background: rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &:before {
+        left: 0;
+        top: 22px;
+        width: 15px;
+        content: ' ';
+        position: absolute;
+        display: inline-block;
+        border: 1px solid rgba(#3B4648, 0.5);
+      }
+
+      &.active {
+        border-left: 5px solid get($list, theme, bg);
+        > a {
+          background: rgba(0, 0, 0, 0.4);
+          padding-left: $line-height-computed - 5px;
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.4);
+          }
+        }
+
+        &:before {
+          display: none;
+        }
+
+        &:after {
+          top: 11px;
+          right: 0;
+          content: '';
+          position: absolute;
+          display: inline-block;
+          border-top: 12px solid rgba(0, 0, 0, 0);
+          border-bottom: 12px solid rgba(0, 0, 0, 0);
+          border-right: 10px solid get($list, body, bg);
+        }
+      }
+    }
+  }
+
+  .sidebar-nav-container > .sidebar-nav {
+    border: none;
+    margin-left: - $line-height-computed;
+    margin-right: - $line-height-computed;
+
+    > li {
+      &:before {
+        display: none;
+      }
+
+      > a {
+        font-size: 16px;
+        line-height: 16px;
+        padding: 15px $line-height-computed;
+
+        > .name {
+          line-height: 18px;
+          margin-left: 15px;
+        }
+
+        > .rubix-icon,
+        > rubix-icon > .rubix-icon {
+          width: 18px;
+          height: 19px;
+          display: inline-block;
+        }
+      }
+
+      &.active {
+        >a {
+          padding-left: $line-height-computed - 5;
+        }
+      }
+    }
+  }
+
+  #navbar ~ #sidebar {
+    top: $navbar-height;
+  }
+}

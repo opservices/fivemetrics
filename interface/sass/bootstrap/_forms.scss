@@ -1,0 +1,165 @@
+.form-group {
+  position: relative;
+
+  .control-label ~ .form-control-feedback {
+    top: 30px;
+  }
+
+  .control-label.sr-only ~ .form-control-feedback {
+    top: 0px;
+  }
+
+  [class^='col-'] {
+    .form-control-feedback {
+      right: $line-height-computed;
+    }
+  }
+}
+
+.form-inline {
+  .form-group {
+    .form-control-feedback {
+      top: 30px;
+      @media (min-width: $screen-sm-min) {
+        top: 0px;
+      }
+    }
+  }
+}
+
+.form-horizontal {
+  .form-group {
+    .form-control-feedback {
+      top: 0px;
+    }
+  }
+}
+
+.form-control {
+  color: #444;
+  height: 30px;
+  padding: 0 12px;
+  box-shadow: none !important;
+  border-width: 2px;
+  letter-spacing: 0.5px;
+  border-radius: 0 !important;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.plain {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.input-group-addon {
+  border: none;
+  color: $primary-color;
+  border-radius: 0 !important;
+}
+
+.form-control-feedback {
+  width: 30px;
+  height: 30px;
+  line-height: 30px !important;
+}
+
+.input-group > .form-control-feedback {
+  top: 0;
+}
+
+select[multiple], select[size] {
+  padding: 12px;
+}
+
+input[type="file"] {
+  display: block;
+  line-height: 0px;
+}
+
+.help-block {
+  color: #bbb;
+}
+
+.form-control.inline, .help-block.inline {
+  margin: 0;
+  width: auto;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+@media (min-width: $screen-sm-min) {
+  .form-horizontal .control-label {
+    padding: 0;
+    line-height: 30px;
+  }
+}
+
+.input-group-addon.plain {
+  padding: 0;
+  border: none;
+  background: none;
+
+  >button {
+    height: 30px;
+    border-radius: 0;
+  }
+}
+
+.form-control-static {
+  padding: 0;
+  line-height: 30px;
+}
+
+.input-lg, .form-horizontal .form-group-lg .form-control, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  padding: 10px 16px;
+}
+
+.input-sm, .form-horizontal .form-group-sm .form-control, .input-group-sm > .form-control, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .btn {
+  height: 25px !important;
+  padding-top: 2px;
+  margin-top: 8px;
+}
+
+.input-lg, .form-horizontal .form-group-lg .form-control, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .form-horizontal .form-group-lg .form-control, .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn {
+  height: 50px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.list-group-item {
+  &:hover, &:focus {
+    padding: 10px 15px;
+    color: #555 !important;
+    border: 1px solid #DDD !important;
+    background-color: #F5F5F5 !important;
+  }
+}
+
+.form-inline .control-label {
+  display: inline-block;
+}
+
+rubix-input-group {
+  display: inline-block;
+  position: relative;
+}
+
+.radio input[type='radio'],
+.radio-inline input[type='radio'] {
+  margin-top: 6px;
+}
+
+.checkbox input[type='checkbox'],
+.checkbox-inline input[type='checkbox'] {
+  margin-top: 6px;
+}

@@ -1,0 +1,22 @@
+@mixin theme-footer($list) {
+  #footer {
+    padding: 10px;
+    position: relative;
+    color: get($list, footer, color);
+    background: get($list, footer, bg);
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+
+  #footer-container {
+    transition: all 0.3s ease;
+  }
+
+  #sidebar ~ #footer-container {
+    @media (min-width: $screen-sm-min) {
+      //margin-left: get($list, sidebar, width);
+    }
+  }
+}

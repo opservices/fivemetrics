@@ -1,0 +1,79 @@
+$img-path: '/imgs/common';
+$bootstrap-sass-asset-helper: true;
+$icon-font-path: 'fonts/glyphicon/'; // only for glyphicon
+$grid-gutter-width: 30px;
+
+$font-size-base: 14px;
+$line-height-base: 1.785714289; // 25/14
+$line-height-computed: $grid-gutter-width;
+
+$padding-base-vertical: 6px;
+$input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 1);
+
+$nav-link-padding: 4px ($line-height-computed);
+$panel-heading-padding: ($line-height-computed / 2) ($line-height-computed);
+$panel-body-padding: $line-height-computed;
+
+$navbar-height: 45px;
+$sidebar-controls-visibility: visible;
+
+$font-family-sans-serif:  "Open Sans", sans-serif; //corrigir empacotamento das fontes pelo webpack
+$font-weight-base: 100;
+$headings-font-family: "Open Sans", sans-serif;
+$headings-font-weight: 100;
+
+$screen-sm-min: 990px;
+$screen-md-min: 1152px;
+$screen-lg-min: 1366px;
+
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+
+$primary-color: #89949B;
+$brand-primary: #428bca;
+$brand-success: #5cb85c;
+$brand-info: #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+
+$zindex-tooltip: 999999999999999999999999999;
+
+$container-sm: 990px;
+$container-md: 990px;
+$container-lg: 990px;
+
+$btn-height: 30px;
+$btn-border-radius-base: 20px;
+$btn-padding-base-vertical: 2px;
+$btn-padding-base-horizontal: 15px;
+$btn-padding-large-base-vertical: 10px;
+$btn-padding-large-base-horizontal: 25px;
+
+$btn-font-size: 12px;
+$btn-font-weight: bold;
+$btn-font-size-small: 10px;
+$btn-font-size-xsmall: 8px;
+
+$btn-link-color: #89949B;
+$btn-default-color: #B4B7B9;
+$btn-primary-color: $brand-primary;
+$btn-success-color: $brand-success;
+$btn-info-color: $brand-info;
+$btn-warning-color: $brand-warning;
+$btn-danger-color: $brand-danger;
+
+$dropdown-link-color: rgb(137, 148, 155);
+$dropdown-link-hover-bg: rgba(180, 183, 185, 0.05);
+
+$link-color: #2EB398;
+$link-hover-color: #2e6b5e;
+$link-hover-decoration: none;
+
+$nav-link-color: #aaa;
+$nav-disabled-link-color: #777777;
+$nav-link-hover-bg: #f5f5f5;
+$nav-tabs-link-hover-border-color: #f5f5f5;
+
+$navbar-default-bg: #fff;
+$breadcrumb-bg: #fff;

@@ -1,0 +1,23 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: fivemetrics
+    database_user: system
+    database_password: fivemetrics
+    mailer_transport: gmail
+    mailer_host: 127.0.0.1
+    mailer_user: user@email.com
+    mailer_password: ''
+    secret: ThisTokenIsNotSoSecretChangeIt
+    doctrine_cache_dir: /tmp/doctrine-cache/
+    influx_host: 127.0.0.1
+    influx_database: app_history
+    udp: false
+    udp_port: 4444
+    http_port: 8086
+    username: ''
+    password: ''
+    doctrine_cache.redis.host: localhost
+    doctrine_cache.redis.port: 6379
+    doctrine_migrations.dir_name: '%kernel.root_dir%/DoctrineMigrations'

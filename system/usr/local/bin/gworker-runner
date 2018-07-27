@@ -1,0 +1,86 @@
+#!/usr/bin/env php
+<?php
+require_once("/usr/local/app/bootstrap.php");
+
+use EssentialsBundle\KernelLoader;
+use GearmanBundle\Configuration\DataSource\File;
+use GearmanBundle\Worker\WorkerInterface;
+
+function help()
+{
+    print basename(__FILE__) . PHP_EOL;
+    print <<<EOF
+    This script is a generic worker runner. The job servers must be in
+JOB_SERVERS environment variable, like in this PHP example:
+
+    putenv("JOB_SERVERS=" . base64_encode(serialize(JobServerCollection)));
+
+ -c | --class-name      Worker class name that will be runned.
+ -h | --help            Show this help.
+ -f | --file            File to load job servers configuration.
+
+EOF;
+}
+
+function usage()
+{
+    print basename(__FILE__)
+        . ' -c <worker class name> -f <conf.json>' . PHP_EOL;
+}
+
+function getOptions()
+{
+    /** @noinspection PhpParamsInspection */
+    $opts = getopt("c:hf:", [
+        'class-name:',
+        'file:',
+        'help'
+    ]);
+
+    if ((isset($opts['h'])) || (isset($opts['help']))) {
+        help();
+        exit(0);
+    }
+
+    $opts['class-name'] = (isset($opts['c'])) ? $opts['c'] : $opts['class-name'];
+    $opts['file'] = (isset($opts['f'])) ? $opts['f'] : $opts['file'];
+
+    if (empty($opts['class-name'])) {
+        usage();
+        exit(0);
+    }
+
+    return $opts;
+}
+
+$container = KernelLoader::load()->getContainer();
+$dispatcher = $container->get('error.dispatcher');
+
+try {
+    $options = getOptions();
+
+    if (isset($options['file'])) {
+        $loader = new File();
+        $config = $loader->load();
+    } else {
+        $config = unserialize(base64_decode(getenv('GEARMAN_CONFIGURATION')));
+    }
+
+    $class = $options['class-name'];
+
+    $workerConf = $config->getWorkers()
+        ->find($class);
+
+    /** @var WorkerInterface $w */
+    $w = new $class();
+
+    $logger = $container->get('logger');
+
+    $w->setJobServers($config->getJobServers())
+        ->setConfiguration(
+            (is_null($workerConf)) ? null : $workerConf->getConfiguration()
+        )->setLogger($logger)
+        ->run();
+} catch (\Throwable $e) {
+    $dispatcher->send($e);
+}

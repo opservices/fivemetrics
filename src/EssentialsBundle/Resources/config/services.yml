@@ -1,0 +1,57 @@
+#services:
+#    array.mapper:
+#        class: EssentialsBundle\ArrayMapper
+#
+#    account.register:
+#        class: EssentialsBundle\Register\Account
+#        autowire: true
+#    account.account_builder:
+#        class: EssentialsBundle\Entity\Account\AccountBuilder
+#        autowire: true
+#
+#    error.dispatcher:
+#        class: EssentialsBundle\Exception\Dispatcher
+#        arguments: [ '@logger' ]
+#
+#    app.api.v1.account.controller:
+#        class: EssentialsBundle\Controller\Api\V1\AccountController
+#        autowire: true
+#
+#    profiler_subscriber:
+#        class: EssentialsBundle\EventListener\ProfilerDeathSubscriber
+#        autowire: true
+#        tags:
+#            - { name: kernel.event_subscriber }
+#
+#    timeperiods:
+#        class: EssentialsBundle\Entity\TimePeriod\TimePeriodProvider
+#
+#    app.mutex:
+#        class: EssentialsBundle\MutexProvider\MutexProvider
+#        arguments: [ '%doctrine_cache.redis.host%', '%doctrine_cache.redis.port%' ]
+#
+#    api.security.token_authenticator:
+#        class: EssentialsBundle\Api\ApiKeyAuthenticator
+#        autowire: true
+#
+#    cache.factory:
+#        class: EssentialsBundle\Cache\CacheFactory
+#        autowire: true
+#
+#    EssentialsBundle\Cache\CacheFactory: '@cache.factory'
+#
+#    exception_subscriber:
+#        class: EssentialsBundle\EventListener\AuthExceptionSubscriber
+#        arguments: [ '@error.dispatcher', '@router' ]
+#        tags:
+#            - { name: kernel.event_subscriber, event: kernel.exception }
+#
+#    auth_exception_subscriber:
+#        class: EssentialsBundle\EventListener\ExceptionSubscriber
+#        arguments: [ '%kernel.debug%', '@error.dispatcher' ]
+#        tags:
+#            - { name: kernel.event_subscriber, event: kernel.exception }
+#
+#    app.security.access_denied_handler:
+#        class: EssentialsBundle\Api\ApiAccessDeniedHandler
+#

@@ -1,0 +1,17 @@
+extends ./layout.pug
+
+block pace
+  != pace_scripts
+
+block header
+  != app_stylesheets
+
+block content
+  div#app-container!= content
+
+block scripts
+  != app_scripts
+
+block analytics
+  script(src="/js/ga.js")
+

@@ -1,0 +1,10 @@
+@mixin theme-form($list) {
+  .form-control {
+    border-color: get($list, form, border);
+
+    &:focus {
+      box-shadow: none !important;
+      border-color: get($list, form, active, border);
+    }
+  }
+}

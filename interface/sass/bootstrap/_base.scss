@@ -1,0 +1,303 @@
+.radio, .radio-inline {
+  input[type='radio'] {
+    margin-top: 6px;
+  }
+}
+
+.checkbox, .checkbox-inline {
+  input[type='checkbox'] {
+    margin-top: 6px;
+  }
+}
+
+.popover {
+  z-index: 999999999;
+}
+
+.label, .badge {
+  font-size: 75%;
+}
+
+label {
+  display: block;
+
+  &.inline {
+    display: inline-block;
+  }
+}
+
+#app-container {
+  display: block;
+}
+
+#container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+div#__bs_notify__ {
+  z-index: 10000000000000000 !important;
+  background-color: rgb(103, 136, 255) !important;
+}
+
+
+// perfect-scrollbar
+.ps-container .ps-scrollbar-x-rail {
+    position: absolute; /* please don't change 'position' */
+    bottom: 3px; /* there must be 'bottom' for ps-scrollbar-x-rail */
+    height: 6px;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -o-transition: background-color .2s ease, opacity .2s ease;
+    -webkit-transition: background-color .2s ease, opacity .2s ease;
+    -moz-transition: background-color .2s ease, opacity .2s ease;
+    transition: background-color .2s ease, opacity .2s ease;
+}
+
+.ps-container:hover .ps-scrollbar-x-rail,
+.ps-container.hover .ps-scrollbar-x-rail {
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+}
+
+.ps-container .ps-scrollbar-x-rail:hover,
+.ps-container .ps-scrollbar-x-rail.hover {
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+}
+
+.ps-container .ps-scrollbar-x-rail.in-scrolling {
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+}
+
+.ps-container .ps-scrollbar-y-rail {
+    position: absolute; /* please don't change 'position' */
+    right: 3px; /* there must be 'right' for ps-scrollbar-y-rail */
+    width: 6px;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -o-transition: background-color .2s ease, opacity .2s ease;
+    -webkit-transition: background-color .2s ease, opacity .2s ease;
+    -moz-transition: background-color .2s ease, opacity .2s ease;
+    transition: background-color .2s ease, opacity .2s ease;
+}
+
+.ps-container:hover .ps-scrollbar-y-rail,
+.ps-container.hover .ps-scrollbar-y-rail {
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+}
+
+.ps-container .ps-scrollbar-y-rail:hover,
+.ps-container .ps-scrollbar-y-rail.hover {
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+}
+
+.ps-container .ps-scrollbar-y-rail.in-scrolling {
+    background-color: white;
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+}
+
+.ps-container .ps-scrollbar-x {
+    position: absolute; /* please don't change 'position' */
+    bottom: 0; /* there must be 'bottom' for ps-scrollbar-x */
+    height: 6px;
+    background-color: #aaa;
+    -o-transition: background-color .2s ease;
+    -webkit-transition: background-color.2s ease;
+    -moz-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+}
+
+.ps-container.ie6 .ps-scrollbar-x {
+    font-size: 0; /* fixed scrollbar height in xp sp3 ie6 */
+}
+
+.ps-container .ps-scrollbar-x-rail:hover .ps-scrollbar-x,
+.ps-container .ps-scrollbar-x-rail.hover .ps-scrollbar-x {
+    background-color: #999;
+}
+
+.ps-container .ps-scrollbar-y {
+    position: absolute; /* please don't change 'position' */
+    right: 0; /* there must be 'right' for ps-scrollbar-y */
+    width: 6px;
+    background-color: #aaa;
+    -o-transition: background-color .2s ease;
+    -webkit-transition: background-color.2s ease;
+    -moz-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+}
+
+.ps-container.ie6 .ps-scrollbar-y {
+    font-size: 0; /* fixed scrollbar height in xp sp3 ie6 */
+}
+
+.ps-container .ps-scrollbar-y-rail:hover .ps-scrollbar-y,
+.ps-container .ps-scrollbar-y-rail.hover .ps-scrollbar-y {
+    background-color: #999;
+}
+
+.ps-container.ie .ps-scrollbar-x,
+.ps-container.ie .ps-scrollbar-y {
+    visibility: hidden;
+}
+
+.ps-container.ie:hover .ps-scrollbar-x,
+.ps-container.ie:hover .ps-scrollbar-y,
+.ps-container.ie.hover .ps-scrollbar-x,
+.ps-container.ie.hover .ps-scrollbar-y {
+    visibility: visible;
+}
+
+.doc-sidebar {
+  padding: 25px;
+  overflow: auto !important;
+}
+
+.doc-sidebar-link {
+  display: block;
+  margin-left: -25px;
+  margin-right: -25px;
+  border: none !important;
+  padding: 5px 12.5px 5px 25px;
+}
+
+.doc-sidebar-group-links a {
+  padding-left: 37.5px;
+}
+
+.doc-sidebar-group-name {
+  font-size: 12px;
+  cursor: pointer;
+  max-width: 250px;
+  font-weight: bold;
+  user-select: none;
+  position: relative;
+  margin-top: 12.5px;
+  margin-left: -25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 5px;
+  margin-right: -25px;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  color: rgba(137, 148, 155, 0.6);
+}
+
+.doc-sidebar-group-name:hover, .doc-sidebar-group-name.minus {
+  color: rgba(137, 148, 155, 1);
+}
+
+.doc-sidebar-group-name:before {
+  top: -4px;
+  left: 10px;
+  content: '+';
+  font-size: 16px;
+  position: absolute;
+}
+
+.doc-sidebar-group-name.minus:before {
+  top: -8px;
+  left: 12px;
+  content: '-';
+  font-size: 20px;
+}
+
+.doc-sidebar-link:hover {
+  color: white;
+  background: rgb(40, 81, 78);
+}
+
+.doc-sidebar-link.active {
+  background: #2eb398;
+  color: white;
+}
+
+.bs-example {
+  background: white;
+  position: relative;
+  margin-bottom: -8px;
+  border: 1px solid #ddd;
+  padding: 45px 15px 15px;
+  border-radius: 4px 4px 0 0;
+}
+
+.bs-example:after {
+  top: 15px;
+  left: 15px;
+  color: #959595;
+  font-size: 12px;
+  font-weight: 700;
+  content: 'Example';
+  position: absolute;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.bs-example+pre {
+  font-size: 14px;
+  border-color: #ddd;
+  border-radius: 0 0 4px 4px !important;
+}
+
+.upgrade-guide-item {
+  padding-left: 12.5px;
+  list-style-type: disc;
+}
+
+.bs-example .dropdown-menu.open {
+  position: static;
+  display: block;
+  margin-bottom: 5px;
+  clear: left;
+}
+
+.bs-example.tooltip-static .tooltip {
+  margin: 5px 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.bs-example.bs-example-popover-contained {
+  height: 200px;
+}
+
+.bs-example.bs-example-popover-scroll {
+  height: 200px;
+  overflow: scroll;
+}
+
+.show-grid [class^=col-] {
+  background: #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.bs-example .container {
+  width: auto;
+  max-width: 900px;
+}
+
+a[role=menuitem] > .container-fluid {
+  margin: -4px -25px;
+  padding: 4px 25px;
+}

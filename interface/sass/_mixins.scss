@@ -1,0 +1,27 @@
+// import all new mixins here
+@mixin print-styles($map){
+ @each $property, $value in $map {
+   #{$property}: $value;
+ }
+}
+
+@mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%)) {
+	&::-webkit-scrollbar {
+		width:  $size;
+		height: $size;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $primary;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $secondary;
+	}
+  
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $primary;
+    scrollbar-track-color: $secondary;
+  }
+}

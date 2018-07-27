@@ -1,0 +1,47 @@
+[mysql]
+default-character-set		= utf8
+
+[mysqld]
+skip_name_resolve
+datadir				= /var/lib/mysql
+basedir				= /usr
+user				= mysql
+tmpdir				= /var/mysqltmp
+socket				= /var/lib/mysql/mysql.sock
+log_error           = /var/lib/mysql/mysqld.log
+
+
+#plugin-load-add		= ha_tokudb.so
+
+performance_schema		= off
+character_set_server		= utf8
+wait_timeout			= 600
+net_read_timeout		= 600
+interactive_timeout		= 600
+max_heap_table_size		= 256M
+tmp_table_size			= 256M
+max_allowed_packet		= 512M
+
+#default-storage-engine		= TokuDB
+
+max_connections			= 300
+query_cache_size 		= 64M
+query_cache_strip_comments      = 1
+table_open_cache 		= 10000
+table_definition_cache		= 10000
+thread_cache_size 		= 32
+open_files_limit		= 1024000
+
+# innodb settings
+innodb_buffer_pool_size		= 32M
+#innodb_log_file_size		= 512M
+innodb_log_buffer_size		= 512M
+innodb_flush_log_at_trx_commit	= 0
+innodb_lock_wait_timeout	= 50
+innodb_file_per_table		= 1
+innodb_support_xa		= 0
+innodb_log_files_in_group	= 2
+innodb_thread_concurrency	= 4
+
+# Thread handling
+thread_handling 		= pool-of-threads

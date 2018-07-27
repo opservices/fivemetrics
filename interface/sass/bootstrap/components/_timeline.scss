@@ -1,0 +1,259 @@
+$timeline-title-radius: 8px;
+
+.rubix-timeline-view {
+  padding: $line-height-computed;
+  padding-right: 0px;
+  margin-left: 3*$line-height-computed/2;
+  border-left: 2px solid #eee;
+  margin-bottom: - $line-height-computed;
+}
+
+.rubix-panel-body > .rubix-timeline-view {
+  margin-top: - $line-height-computed;
+}
+
+.rubix-panel-header ~ .rubix-panel-body > .rubix-timeline-view {
+  margin-top: 0;
+}
+
+.rubix-timeline-item {
+  position: relative;
+}
+
+.rubix-timeline-title {
+  font-size: 12px;
+  background: #eee;
+  padding: 4px 15px;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: $timeline-title-radius;
+}
+
+.rubix-timeline-icon {
+  width: 30px;
+  height: 30px;
+  left: -41.5px;
+  font-size: 16px;
+  padding: 0px 7px;
+  background: #eee;
+  line-height: 28px;
+  position: absolute;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.rubix-timeline-avatar {
+  left: -41.5px;
+}
+
+.rubix-timeline-body > ul {
+  padding: 0;
+  list-style-type: none;
+  border-bottom: 2px solid #eee;
+  margin-bottom: $line-height-computed;
+  margin-top: $line-height-computed / 2;
+}
+
+.rubix-timeline-body > ul > li {
+  padding-right: $line-height-computed;
+  padding-bottom: $line-height-computed;
+
+  &:before {
+    left: -30px;
+    content: ' ';
+    margin-top: 8px;
+    position: absolute;
+    border-radius: 100px;
+    border: 4px solid #eee;
+    box-shadow: 0px 0px 0px 6px #FFF;
+  }
+}
+
+.rubix-timeline-view ~ .rubix-timeline-view {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.rubix-timeline-view.rubix-timeline-with-header {
+  padding-top: 0;
+
+  >.rubix-timeline-item {
+    position: relative;
+  }
+
+  >.rubix-timeline-item {
+    >.rubix-timeline-header {
+      height: 50px;
+      padding-top: 10px;
+      position: relative;
+      padding-left: 23px;
+      // should consider border width of rubix-timeline-view
+      margin-left: - (5 * $line-height-computed / 2) - 2px;
+
+      >.rubix-timeline-icon, >.rubix-timeline-title {
+        left: 0;
+        position: relative;
+      }
+
+      &[class^="bg-"],
+      &[class*=" bg-"] {
+        >.rubix-timeline-title {
+          padding: 0 10px;
+          background: none !important;
+        }
+      }
+    }
+    >.rubix-timeline-body {
+      >ul {
+        border: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.rubix-timeline-view.rubix-timeline-centered {
+  margin-left: 45%;
+
+  .rubix-timeline-body > ul {
+    border: none;
+    margin-bottom: 0;
+
+    > li {
+      float: right;
+      display: block;
+
+      &:before, &:after {
+        clear: both;
+        content: ' ';
+        display: table;
+      }
+
+      &:nth-child(odd) {
+        width: 100%;
+        float: left;
+        margin-left: -100%;
+        padding-left: $line-height-computed;
+        padding-right: $line-height-computed * 2;
+      }
+    }
+  }
+}
+
+.alternate {
+  .rubix-timeline-view {
+    margin: 0;
+    padding: 0;
+    border: none;
+    margin-top: -25px;
+
+    &:before {
+      left: 50%;
+      height: 100%;
+      content: ' ';
+      position: absolute;
+      padding-right: 0px;
+      border-left: 2px solid #eee;
+    }
+
+    .rubix-timeline-item {
+      padding-top: $line-height-computed;
+    }
+
+    &.rubix-timeline-with-header {
+      .rubix-timeline-item {
+        padding-top: 0;
+      }
+    }
+
+    .rubix-timeline-item:nth-child(odd) {
+      padding-bottom: $line-height-computed;
+    }
+
+    .rubix-timeline-header {
+      margin: 0;
+      left: auto;
+      padding-left: 0;
+      text-align: center;
+
+      >.rubix-timeline-icon {
+        top: 1px;
+        left: auto;
+        padding-right: 0;
+        position: relative;
+        border-radius: 8px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      >.rubix-timeline-title {
+        height: 30px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+
+      &[class^="bg-"],
+      &[class*=" bg-"] {
+        >.rubix-timeline-icon {
+          background: none;
+        }
+      }
+    }
+
+    .rubix-timeline-body > ul {
+      border: none;
+
+      > li {
+        width: 100%;
+        position: relative;
+        display: inline-block;
+
+        &:before {
+          left: 50%;
+          position: absolute;
+        }
+      }
+
+      > li:nth-child(odd) {
+        padding-right: 50%;
+        right: $line-height-computed;
+        padding-left: $line-height-computed * 2;
+
+        &:before {
+          margin-left: 22px;
+        }
+      }
+
+      > li.left {
+        padding-right: 50% !important;
+        right: $line-height-computed !important;
+        padding-left: $line-height-computed * 2 !important;
+
+        &:before {
+          margin-left: 22px !important;
+        }
+      }
+
+      > li:nth-child(even) {
+        padding-left: 50%;
+        right: - $line-height-computed;
+        padding-right: $line-height-computed * 2;
+
+        &:before {
+          margin-left: -28px;
+        }
+      }
+
+      > li.right {
+        padding-left: 50% !important;
+        right: - $line-height-computed !important;
+        padding-right: $line-height-computed * 2 !important;
+
+        &:before {
+          margin-left: -28px !important;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+@mixin generateSizes($value) {
+  $calculated_value: $value * 100%;
+
+  .icon-#{$value}-and-quarter-x {
+    font-size: ($calculated_value + ($calculated_value / 4));
+  }
+  .icon-#{$value}-and-half-x {
+    font-size: ($calculated_value + ($calculated_value / 2));
+  }
+  .icon-#{$value}x {
+    font-size: $calculated_value;
+  }
+}
+
+@include generateSizes(1);
+@include generateSizes(2);
+@include generateSizes(3);
+@include generateSizes(4);
+
+@mixin rotateIcon($value) {
+  .icon-rotate-#{$value} {
+    transform: rotate(#{$value}deg);
+  }
+}
+
+@include rotateIcon(45);
+@include rotateIcon(90);
+@include rotateIcon(135);
+@include rotateIcon(180);
+@include rotateIcon(225);
+@include rotateIcon(270);
+@include rotateIcon(315);
+@include rotateIcon(360);

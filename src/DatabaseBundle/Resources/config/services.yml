@@ -1,0 +1,9 @@
+#services:
+#    app.metric.controller:
+#        class: DatabaseBundle\Controller\Api\V1\NoSql\MetricController
+#
+#    nosql.metric.repository:
+#        class: DatabaseBundle\NoSql\Metric\MetricRepository
+#
+#    nosql.database.connection.provider:
+#        class: DatabaseBundle\NoSql\DatabaseConnectionProvider

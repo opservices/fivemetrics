@@ -1,0 +1,85 @@
+.pricing-table {
+  padding: 0;
+  background: white;
+  margin-bottom: $line-height-computed;
+
+  &.preferred {
+    z-index: 1;
+    left: -1px;
+    border: 1px solid gray;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    border-right: 1px solid #E9F0F5;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.pricing-table.preferred ~ .pricing-table {
+  left: -1px;
+}
+
+.pricing-table-header {
+  color: #8BA0AF;
+  background: #D2E0EB;
+
+  >h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+    padding-top: $line-height-computed;
+    padding-bottom: $line-height-computed;
+  }
+}
+
+.pricing-table-price {
+  color: inherit;
+  background: #D2E0EB;
+  margin-top: $line-height-computed;
+}
+
+.pricing-table-price h2 {
+  left: 50%;
+  width: 85px;
+  margin: auto;
+  height: 85px;
+  font-size: 24px;
+  line-height: 75px;
+  position: absolute;
+  background: inherit;
+  margin-left: -42.5px;
+  border-radius: 100px;
+  border: 5px solid white;
+  margin-top: - $line-height-computed/2;
+}
+
+.pricing-table-body {
+  margin-bottom: $line-height-computed;
+  margin-top: 2 * $line-height-computed;
+}
+
+.pricing-table-feature {
+  margin: 0 $line-height-computed;
+  padding: $line-height-computed / 2;
+}
+
+.pricing-btn-container {
+  padding: $line-height-computed;
+  padding-bottom: 0;
+  padding-top: $line-height-computed / 2;
+
+  >button {
+    width: 100%;
+    border-radius: 8px;
+
+    &.btn-lightblue50 {
+      &:hover, &:focus {
+        background: #8BA0AF;
+        border-color: #8BA0AF;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 72 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	 <title>Icon/EBS</title>
+    <defs>
+        <linearGradient x1="42.8471684%" y1="0%" x2="42.8471697%" y2="100%" id="EBS-icon-gradient">
+            <stop stop-color="#3EFCC9" offset="0%"></stop>
+            <stop stop-color="#8F52F8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+<g id="Icon" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+	<g id="Icon/EBS" >
+		<g>
+			<path  d="M62.8,73H9.2V14.2h53.6V73z M10.2,72h51.6V15.3H10.2V72z"/>
+		</g>
+		<g>
+			<path  d="M62.8,75.8H9.2V72h53.6V75.8z M10.2,74.8h51.6v-1.7H10.2V74.8z"/>
+		</g>
+		<g>
+			<path  d="M62.1,8.4H9.4l8.7-8.2H54L62.1,8.4z M11.9,7.4h47.7l-6.1-6.2H18.5L11.9,7.4z"/>
+		</g>
+		<g>
+			<path  d="M61.6,11.6H9.9V7.8h51.7V11.6z M10.9,10.6h49.7V8.8H10.9V10.6z"/>
+		</g>
+	</g>
+</g>
+</svg>

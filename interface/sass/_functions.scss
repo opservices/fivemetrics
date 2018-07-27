@@ -1,0 +1,33 @@
+@function verify_theme_style($theme_list, $default_list, $style) {
+	$value: get($theme_list, $style);
+
+	@if $value == null {
+		$value: get($default_list, $style);
+	}
+	
+	@if type-of($value) == "map" {
+		$sublist: $value;
+		$value: ();
+		@each $st, $val in $sublist {
+			$val: verify_theme_style(
+				get($theme_list, $style),
+				get($default_list, $style),
+				$st
+			);
+			$temp_val: ($st: $val);
+
+			$value: map-collect($value, $temp_val);
+			
+		}
+  	}
+	@return $value;
+}
+
+@function map-collect($maps...) {
+  $collection: ();
+
+  @each $map in $maps {
+    $collection: map-merge($collection, $map);
+  }
+  @return $collection;
+}

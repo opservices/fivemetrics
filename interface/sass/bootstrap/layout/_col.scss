@@ -1,0 +1,186 @@
+@mixin generateGutter($type) {
+  .col-#{$type}-gutter-top {
+    margin-top: $grid-gutter-width / 2;
+  }
+  .col-#{$type}-gutter-left {
+    margin-left: $grid-gutter-width / 2;
+  }
+  .col-#{$type}-gutter-right {
+    margin-right: $grid-gutter-width / 2;
+  }
+  .col-#{$type}-gutter-bottom {
+    margin-bottom: $grid-gutter-width / 2;
+  }
+}
+
+@mixin generateCollapse($type) {
+  .col-#{$type}-collapse-top {
+    padding-top: 0;
+  }
+  .col-#{$type}-collapse-left {
+    padding-left: 0;
+  }
+  .col-#{$type}-collapse-right {
+    padding-right: 0;
+  }
+  .col-#{$type}-collapse-bottom {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  @include generateGutter(xs-only);
+  @include generateCollapse(xs-only);
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include generateGutter(sm-only);
+  @include generateCollapse(sm-only);
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include generateGutter(md-only);
+  @include generateCollapse(md-only);
+}
+@media (min-width: $screen-lg-min) {
+  @include generateGutter(lg-only);
+  @include generateCollapse(lg-only);
+}
+
+@include generateGutter(xs);
+@include generateCollapse(xs);
+
+@media (min-width: $screen-sm-min) {
+  @include generateGutter(sm);
+  @include generateCollapse(sm);
+}
+@media (min-width: $screen-md-min) {
+  @include generateGutter(md);
+  @include generateCollapse(md);
+}
+@media (min-width: $screen-lg-min) {
+  @include generateGutter(lg);
+  @include generateCollapse(lg);
+}
+
+/* columns of same height styles */
+.container-xs-height {
+  width: 100.1%;
+  display: table;
+  table-layout: fixed;
+  padding-left:0px;
+  padding-right:0px;
+  &::before, &:after {
+    clear: none;
+    content: none;
+    display: none;
+  }
+}
+.row-xs-height {
+  display:table-row;
+  &::before, &:after {
+    clear: none;
+    content: none;
+    display: none;
+  }
+}
+.col-xs-height {
+  vertical-align: top;
+  display:table-cell;
+  float:none;
+}
+@media (min-width: $screen-sm-min) {
+  .container-sm-height {
+    width: 100.1%;
+    display:table;
+    table-layout: fixed;
+    padding-left:0px;
+    padding-right:0px;
+    &::before, &:after {
+      clear: none;
+      content: none;
+      display: none;
+    }
+  }
+  .row-sm-height {
+    display:table-row;
+    &::before, &:after {
+      clear: none;
+      content: none;
+      display: none;
+    }
+  }
+  .col-sm-height {
+    vertical-align: top;
+    display:table-cell;
+    float:none;
+  }
+}
+@media (min-width: $screen-md-min) {
+  .container-md-height {
+    width: 100.1%;
+    display:table;
+    table-layout: fixed;
+    padding-left:0px;
+    padding-right:0px;
+    &::before, &:after {
+      clear: none;
+      content: none;
+      display: none;
+    }
+  }
+  .row-md-height {
+    display:table-row;
+    &::before, &:after {
+      clear: none;
+      content: none;
+      display: none;
+    }
+  }
+  .col-md-height {
+    vertical-align: top;
+    display:table-cell;
+    float:none;
+  }
+}
+@media (min-width: $screen-lg-min) {
+  .container-lg-height {
+    width: 100.1%;
+    display:table;
+    table-layout: fixed;
+    padding-left:0px;
+    padding-right:0px;
+    &::before, &:after {
+      clear: none;
+      content: none;
+      display: none;
+    }
+  }
+  .row-lg-height {
+    display:table-row;
+    &::before, &:after {
+      clear: none;
+      content: none;
+      display: none;
+    }
+  }
+  .col-lg-height {
+    vertical-align: top;
+    display:table-cell;
+    float:none;
+  }
+}
+
+/* vertical alignment styles */
+.col-top {
+  vertical-align:top;
+}
+.col-middle {
+  vertical-align:middle;
+}
+.col-bottom {
+  vertical-align:bottom;
+}
+
+/* fix firefox responsive images */
+.img-responsive {
+  width: 100%
+}

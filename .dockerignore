@@ -1,0 +1,11 @@
+.dockerignore
+.git
+.gitignore
+.github
+dist
+docs
+node_modules
+local
+tmp
+*.yml
+*.md

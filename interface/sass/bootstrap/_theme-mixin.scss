@@ -1,0 +1,395 @@
+@import "colors";
+@import "sections/sections";
+@import "components/components";
+
+.bs-example>.dropdown>{
+  .dropdown-toggle {
+    float: left;
+  }
+  .dropdown-menu {
+    clear: left;
+    display: block;
+    position: static;
+    margin-bottom: 5px;
+  }
+}
+
+@mixin theme-mixin($mixin-name, $list) {
+  html {
+    letter-spacing: 0.5px;
+  }
+
+  @include theme-link($list);
+  @include theme-panel($list);
+
+  html.#{$mixin-name} {
+    // components
+
+    @include theme-form($list);
+    @include theme-menu($list);
+    @include theme-select2($list);
+    @include theme-pagination($list);
+    @include theme-datepicker($list);
+    @include theme-breadcrumbs($list);
+    @include theme-tags($list);
+    @include theme-headings($list);
+
+    @include generateColors("theme", get($list, theme, bg), get($list, theme, color));
+  }
+
+  html.#{$mixin-name} {
+    background: get($list, theme, bg);
+    overflow-x: hidden;
+    color: get($list, body, color);
+
+    body {
+      background: get($list, theme, bg);
+      //overflow-x: hidden;
+      color: get($list, body, color);
+
+      #app-container {
+        overflow: hidden;
+      }
+
+      #container > div {
+        &:first-child {
+          &#navbar {
+            #rubix-nav-header {
+              margin: 0;
+            }
+          }
+
+          &#body {
+            margin-top: 0;
+            padding-top: $line-height-computed;
+          }
+        }
+      }
+
+      #container.container-open {
+        >#sidebar {
+          left: 0;
+        }
+        #rubix-nav-header, >#body, >#footer-container {
+          //margin-left: get($list, sidebar, width);
+          margin-right: - get($list, sidebar, width);
+
+          @media (min-width: $screen-sm-min) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      #container.force-close {
+        >#sidebar {
+          left: - get($list, sidebar, width);
+        }
+        #rubix-nav-header {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        >#body, >#footer-container {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      // sections
+      @include theme-header($list);
+      @include theme-sidebar($list);
+      @include theme-body($list);
+      @include theme-footer($list);
+    }
+  }
+
+
+  html .sidebar-nav > li > a > .toggle-button {
+    top: 14px;
+    right: 15px;
+    position: absolute;
+  }
+
+  .toggle-button {
+    transform-origin: 4px;
+    transition: all 0.125s ease;
+
+    &.open {
+      transform: rotate(-90deg);
+    }
+
+    &.opposite {
+      transform-origin: 12px;
+
+      &.open {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  html.touchevents, html.touchevents > body, html.touchevents #app-container, html.touchevents #app-container > #container {
+    position: relative;
+    // overflow: hidden !important;
+  }
+
+  html.touchevents #body {
+    top:0;
+    bottom: 0;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 0 !important;
+    position:fixed !important;
+    // overflow: hidden !important;
+    margin-bottom: 0 !important;
+    min-height: 100% !important;
+    //margin-top: -($navbar-height + $line-height-computed) !important;
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      //padding-top: ($navbar-height + $line-height-computed) * 2;
+      padding-bottom: $line-height-computed;
+
+      >div {
+        overflow-x: hidden;
+      }
+    }
+  }
+
+  html.touchevents {
+    // #sidebar, #body, #footer {
+    //   transform: translate3d(0, 0, 0);
+    // }
+
+    #sidebar {
+      // overflow: hidden !important;
+      #sidebar-container .sidebar {
+        overflow-x: hidden !important;
+        //overflow-y: scroll !important;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+    }
+
+    #footer, #footer-container {
+      display: none !important;
+      position: relative !important;
+    }
+  }
+
+  html.static {
+    background: get($list, sidebar, bg);
+
+    body, #app-container {
+      background: get($list, sidebar, bg);
+    }
+
+    #body {
+      @if $sidebar-controls-visibility == hidden {
+        margin-top: - (75px - $navbar-height) !important;
+      } @else {
+        margin-top: - (110px - $navbar-height) !important;
+      }
+    }
+
+    #sidebar, #rubix-nav-header {
+      position: relative !important;
+    }
+
+    #rubix-nav-header {
+      position: static;
+      margin-top: -110px;
+      margin-bottom: -110px;
+      margin-left: -25px !important;
+      margin-right: - $line-height-computed;
+    }
+
+    #sidebar {
+      // overflow: visible !important;
+
+      #sidebar-container, .sidebar {
+        overflow: visible !important;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      #rubix-nav-header {
+        margin-left: get($list, sidebar, width) - $line-height-computed !important;
+      }
+    }
+
+    #container.container-open {
+      #rubix-nav-header {
+        margin-left: get($list, sidebar, width) - $line-height-computed !important;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        #rubix-nav-header {
+          margin-right: - $line-height-computed !important;
+        }
+      }
+    }
+  }
+
+  html.boxed {
+    height: 100%;
+    overflow: hidden;
+    background: #333333 url('#{$img-path}/congruent_outline.png');
+
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: none;
+      transition: all 0.5s ease;
+
+      #navbar {
+        padding: 0;
+      }
+
+      #rubix-nav-header {
+        margin: 0;
+        position: absolute;
+      }
+
+      #sidebar {
+        top: $navbar-height;
+      }
+
+      #container.container-open {
+        >#sidebar {
+          left: 0;
+        }
+        #rubix-nav-header {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        >#body, >#footer-container {
+          margin-left: get($list, sidebar, width);
+          margin-right: - get($list, sidebar, width);
+
+          @media (min-width: $screen-sm-min) {
+            margin-right: 0;
+            margin-left: get($list, sidebar, width);
+          }
+        }
+      }
+
+      >#app-container {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        #rubix-nav-header {
+          position: relative;
+        }
+
+        #sidebar {
+          margin: 0;
+          position: absolute;
+        }
+
+        #body {
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin-top: 0;
+          overflow: auto;
+          margin-left: 0;
+          position: absolute;
+          padding-bottom: $line-height-computed;
+          padding-top: 2 * ($line-height-computed + $navbar-height);
+          margin-top: - ($navbar-height * 2 + $line-height-computed) !important;
+
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+
+        #footer-container, #footer {
+          display: none;
+        }
+
+        #navbar ~ #body {
+          margin-top: 0;
+          top: $navbar-height - 6px;
+        }
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      body {
+        width: $screen-sm-min;
+        margin: auto;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+        >#app-container {
+          margin: auto;
+
+          #sidebar {
+            margin-left: 0;
+          }
+
+          #sidebar ~ #body, #sidebar ~ #body ~ #footer-container {
+            right: 0;
+            //margin-left: get($list, sidebar, width);
+          }
+        }
+      }
+    }
+  }
+
+  html.static.boxed {
+    height: auto;
+    overflow: auto;
+    overflow-x: hidden;
+
+    body {
+      height: auto;
+      overflow: visible;
+      overflow-x: hidden;
+
+      #app-container {
+        overflow: hidden;
+      }
+
+      #container.container-open {
+        #rubix-nav-header {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+      }
+
+      #navbar {
+        width: 100%;
+      }
+
+      #rubix-nav-header {
+        margin-right: 0;
+        margin-top: -110px;
+        margin-left: 0 !important;
+      }
+
+      #body {
+        overflow: hidden !important;
+        padding-top: 95px !important;
+        position: relative !important;
+        padding-bottom: 95px !important;
+      }
+
+      #footer-container, #footer {
+        display: block !important;
+      }
+
+      #footer-container {
+        margin-top: $line-height-computed;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@function base-maker($theme_list) {
+
+	$theme: (
+    	bg: $primary-color,
+        color: #CCD6DF
+    );
+
+	$temp_theme: $theme;
+	$theme: ();
+
+	@each $style, $value in $temp_theme {
+		$verified_style: verify_theme_style(
+			get($theme_list, theme),
+			$temp_theme,
+			$style
+		);
+		$temp_map: ( $style: $verified_style );
+		$theme: map-collect($theme, $temp_map);
+	}
+
+  	@return $theme;
+}

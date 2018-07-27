@@ -1,0 +1,67 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+    encoders:
+        EssentialsBundle\Entity\Account\Account:
+            algorithm: bcrypt
+            cost: 13
+
+    role_hierarchy:
+        ROLE_DEVEL: [ROLE_SYSTEM, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH, ROLE_ALLOW_ONBOARDING]
+        ROLE_SYSTEM: [ROLE_ALLOW_CREATE_ACCOUNT, ROLE_ADMIN, ROLE_API_V1]
+
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        fivemetrics_users:
+            entity: { class: EssentialsBundle\Entity\Account\Account, property: email }
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        api:
+            pattern: ^/api/
+            stateless: true
+
+            guard:
+                authenticators:
+                    - api.security.token_authenticator
+
+            access_denied_handler: app.security.access_denied_handler
+
+        main:
+            anonymous: ~
+
+            guard:
+                authenticators:
+                    - app.security.login_form_authenticator
+
+            logout:
+                path: /logout
+
+            context: secured_area
+            logout_on_user_change: true
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+            switch_user: ~
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/forgot-password, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/reset-password, roles: [ IS_AUTHENTICATED_ANONYMOUSLY, ROLE_USER ] }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: ["GET", "POST"] }
+        - { path: ^/api/v1/system, roles: ROLE_SYSTEM }
+        - { path: ^/(api|web)/v1/onboarding, roles: ROLE_ALLOW_ONBOARDING }
+        - { path: ^/(api|web)/v1, roles: ROLE_API_V1 }
+        - { path: ^/doc/api, roles: ROLE_DEVEL }
+        - { path: ^/, roles: ROLE_USER }

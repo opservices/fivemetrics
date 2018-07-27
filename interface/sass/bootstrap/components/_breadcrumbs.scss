@@ -1,0 +1,8 @@
+@mixin theme-breadcrumbs($list) {
+  .breadcrumb > li > a {
+    color: get($list, theme, bg);
+    &:hover, &:focus {
+      color: darken(get($list, theme, bg), 15%);
+    }
+  }
+}

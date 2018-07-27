@@ -1,0 +1,407 @@
+EssentialsBundle\Entity\Account\Account:
+    account_costumer:
+        username: 'tester'
+        uid: '@self->username'
+        plainPassword: 'pass'
+        apiKey: '@self->username'
+        email: <concat(@self->username, '@', 'fivemetrics.io')>
+        roles: ["ROLE_API_V1", "ROLE_SYSTEM", "ROLE_ALLOW_ONBOARDING", "ROLE_PAYMENT_VERIFIED"]
+
+    account_system:
+        username: 'system'
+        uid: '@self->username'
+        plainPassword: 'pass'
+        apiKey: '@self->username'
+        email: <concat(@self->username, '@', 'fivemetrics.io')>
+        roles: ["ROLE_API_V1", "ROLE_SYSTEM", "ROLE_PAYMENT_VERIFIED"]
+
+    account_developer:
+        username: 'developer'
+        uid: '@self->username'
+        plainPassword: 'pass'
+        apiKey: '@self->username'
+        email: <concat(@self->username, '@', 'fivemetrics.io')>
+        roles: ["ROLE_DEVEL"]
+
+EssentialsBundle\Entity\Account\AccountConfiguration:
+    account_costumer_config_1:
+        name:  'aws.key'
+        value: 'key-test'
+        account: '@account_costumer'
+
+    account_costumer_config_2:
+        name:  'aws.secret'
+        value: 'secret-test'
+        account: '@account_costumer'
+
+    account_costumer_config_3:
+        name:  'aws.region'
+        value: 'region'
+        account: '@account_costumer'
+
+DataSourceBundle\Entity\DataSource\DataSource:
+    data_source_aws_ec2:
+        name: 'aws.ec2'
+        label: 'EC2'
+        description: 'AWS EC2 description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_ec2_configuration'
+
+    data_source_aws_elb:
+        name: 'aws.elb'
+        label: 'ELB'
+        description: 'AWS ELB description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_elb_configuration'
+
+    data_source_aws_ebs:
+        name: 'aws.ebs'
+        label: 'EBS'
+        description: 'AWS EBS description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_ebs_configuration'
+
+    data_source_aws_autoscaling:
+        name: 'aws.autoscaling'
+        label: 'Auto Scaling'
+        description: 'AWS Auto Scaling description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_autoscaling_configuration'
+
+    data_source_aws_s3:
+        name: 'aws.s3'
+        label: 'S3'
+        description: 'AWS S3 description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_s3_configuration'
+
+    data_source_aws_glacier:
+        name: 'aws.glacier'
+        label: 'Glacier'
+        description: 'AWS Glacier description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_glacier_configuration'
+
+    data_source_aws_cloudwatch:
+        name: 'aws.cloudwatch'
+        label: 'Cloud Watch'
+        description: 'AWS Cloud Watch description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_cloudwatch_configuration'
+
+    data_source_aws_test:
+        name: 'aws.test'
+        label: 'Test'
+        description: 'Test description...'
+        icon: 'icon'
+        groups: ['@data_source_group_1']
+        dataSourceConfiguration: '@data_source_aws_test_configuration'
+
+DataSourceBundle\Entity\DataSource\DataSourceConfiguration:
+    data_source_aws_ec2_configuration:
+        collectInterval: 300
+        maxConcurrency: 5
+        dataSource: '@data_source_aws_ec2'
+
+    data_source_aws_elb_configuration:
+        collectInterval: 300
+        maxConcurrency: 5
+        dataSource: '@data_source_aws_elb'
+
+    data_source_aws_ebs_configuration:
+        collectInterval: 300
+        maxConcurrency: 5
+        dataSource: '@data_source_aws_ebs'
+
+    data_source_aws_autoscaling_configuration:
+        collectInterval: 300
+        maxConcurrency: 5
+        dataSource: '@data_source_aws_autoscaling'
+
+    data_source_aws_s3_configuration:
+        collectInterval: 900
+        maxConcurrency: 5
+        dataSource: '@data_source_aws_s3'
+
+    data_source_aws_glacier_configuration:
+        collectInterval: 300
+        maxConcurrency: 5
+        dataSource: '@data_source_aws_glacier'
+
+    data_source_aws_cloudwatch_configuration:
+        collectInterval: 900
+        maxConcurrency: 50
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_aws_test_configuration:
+        collectInterval: 300
+        maxConcurrency: 5
+        dataSource: '@data_source_aws_test'
+
+DataSourceBundle\Entity\DataSource\DataSourceGroup:
+    data_source_group_1:
+        name: 'aws'
+
+DataSourceBundle\Entity\DataSource\DataSourceParameter:
+    data_source_parameter_aws_ec2_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_ec2'
+
+    data_source_parameter_aws_ec2_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_ec2'
+
+    data_source_parameter_aws_ec2_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_ec2'
+
+    data_source_parameter_aws_elb_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_elb'
+
+    data_source_parameter_aws_elb_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_elb'
+
+    data_source_parameter_aws_elb_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_elb'
+
+    data_source_parameter_aws_ebs_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_ebs'
+
+    data_source_parameter_aws_ebs_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_ebs'
+
+    data_source_parameter_aws_ebs_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_ebs'
+
+    data_source_parameter_aws_autoscaling_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_autoscaling'
+
+    data_source_parameter_aws_autoscaling_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_autoscaling'
+
+    data_source_parameter_aws_autoscaling_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_autoscaling'
+
+    data_source_parameter_aws_s3_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_s3'
+
+    data_source_parameter_aws_s3_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_s3'
+
+    data_source_parameter_aws_s3_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_s3'
+
+    data_source_parameter_aws_glacier_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_glacier'
+
+    data_source_parameter_aws_glacier_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_glacier'
+
+    data_source_parameter_aws_glacier_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_glacier'
+
+    data_source_parameter_aws_cloudwatch_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_cloudwatch_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_cloudwatch_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_cloudwatch_namespace_1:
+        name: 'aws.cloudwatch.namespace'
+        label: 'Namespace'
+        description: 'Aws namespace...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_cloudwatch_metric_name_1:
+        name: 'aws.cloudwatch.metric_name'
+        label: 'Metric Name'
+        description: 'Aws cloud watch metric name...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_cloudwatch_dimensions_1:
+        name: 'aws.cloudwatch.dimensions'
+        label: 'Dimensions'
+        description: 'Aws cloud watch dimensions...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_cloudwatch_statistics_1:
+        name: 'aws.cloudwatch.statistics'
+        label: 'Statistics'
+        description: 'Aws cloud watch statistics...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_cloudwatch_unit_1:
+        name: 'aws.cloudwatch.unit'
+        label: 'Unit'
+        description: 'Aws cloud watch unit...'
+        dataSource: '@data_source_aws_cloudwatch'
+
+    data_source_parameter_aws_test_key_1:
+        name: 'aws.key'
+        label: 'Key'
+        description: 'Aws Key...'
+        dataSource: '@data_source_aws_test'
+
+    data_source_parameter_aws_test_secret_1:
+        name: 'aws.secret'
+        label: 'Secret'
+        description: 'Aws Secret...'
+        dataSource: '@data_source_aws_test'
+
+    data_source_parameter_aws_test_region_1:
+        name: 'aws.region'
+        label: 'Region'
+        description: 'Aws region...'
+        dataSource: '@data_source_aws_test'
+
+DataSourceBundle\Entity\DataSource\DataSourceCollect:
+    data_source_collect_aws_ec2_1:
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        uid: '647f7410133f2dcc1cfa5ac4029bd67ea9c6d856'
+
+    data_source_collect_aws_ec2_2:
+        dataSource: '@data_source_aws_ebs'
+        account: '@account_costumer'
+        uid: 'db64ada3628b6670d0992d69ba2033fb1368e38c'
+
+    data_source_collect_aws_ec2_3:
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        isEnabled: false
+        uid: '7e5c61f14fbf7a4f07c4c96a4a9fb4b7198167eb'
+
+DataSourceBundle\Entity\DataSource\DataSourceParameterValue:
+    data_source_configuration_aws_ec2_key_1:
+        parameter: '@data_source_parameter_aws_ec2_key_1'
+        value: 'key-test'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_1'
+
+    data_source_configuration_aws_ec2_secret_1:
+        parameter: '@data_source_parameter_aws_ec2_secret_1'
+        value: 'secret-test'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_1'
+
+    data_source_configuration_aws_ec2_region_1:
+        parameter: '@data_source_parameter_aws_ec2_region_1'
+        value: 'us-east-1'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_1'
+
+    data_source_configuration_aws_ec2_key_2:
+        parameter: '@data_source_parameter_aws_ec2_key_1'
+        value: 'key-test'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_2'
+
+    data_source_configuration_aws_ec2_secret_2:
+        parameter: '@data_source_parameter_aws_ec2_secret_1'
+        value: 'secret-test'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_2'
+
+    data_source_configuration_aws_ec2_region_2:
+        parameter: '@data_source_parameter_aws_ec2_region_1'
+        value: 'sa-east-1'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_2'
+
+    data_source_configuration_aws_ec2_key_3:
+        parameter: '@data_source_parameter_aws_ec2_key_1'
+        value: 'key-test'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_3'
+
+    data_source_configuration_aws_ec2_secret_3:
+        parameter: '@data_source_parameter_aws_ec2_secret_1'
+        value: 'secret-test'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_3'
+
+    data_source_configuration_aws_ec2_region_3:
+        parameter: '@data_source_parameter_aws_ec2_region_1'
+        value: 'sa-east-1'
+        dataSource: '@data_source_aws_ec2'
+        account: '@account_costumer'
+        collect: '@data_source_collect_aws_ec2_3'
+

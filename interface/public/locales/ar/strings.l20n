@@ -1,0 +1,24 @@
+<!-- USEFUL TO KNOW CURRENTLY SELECTED LOCALE -->
+<selectedFlag 'Saudi-Arabia'>
+
+<!-- NAVIGATION LANGUAGE MENU -->
+<languageMenu[$lang] {
+  enUS: "الإنجليزية - الولايات المتحدة",
+  fr: "الفرنسية",
+  it: "الإيطالية",
+  ge: "الألمانية",
+  ar: "العربية",
+  ch: "الصينية"
+}>
+
+<!-- NAVIGATION LANGUAGE MENU - HEADING -->
+<languageMenuHeading 'اختيار اللغة'>
+
+<!-- SETTINGS MENU - Fluid -->
+<settingsMenuHeading 'البعد'>
+<settingsMenuFluid 'السائل'>
+<settingsMenuBoxed '(990px​​) محاصر'>
+
+<!-- NOTIFICATIONS MENU -->
+<notificationsMenuHeading 'تنبيهاتك'>
+<notificationsTimeFirst 'منذ ساعة'>

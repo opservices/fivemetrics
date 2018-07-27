@@ -1,0 +1,148 @@
+@import "common";
+
+@mixin generate-button($name, $color, $hover-color) {
+  .btn-#{$name} {
+    @include button-variant($color, $hover-color);
+  }
+}
+
+@mixin generate-menu($name, $color, $hover-color) {
+  .menu-#{$name} {
+    @include menu-variant($color, $hover-color);
+  }
+}
+
+@mixin generate-nav($name, $color, $hover-color) {
+  .nav-#{$name} {
+    @include nav-variant($color, $hover-color);
+  }
+}
+
+@mixin generate-tab($name, $color, $hover-color) {
+  .tab-#{$name} {
+    border-color: $color;
+
+    > li.active > a {
+      border-color: $color;
+      border-bottom-color: transparent;
+    }
+
+    &.nav-pills > li.active > a {
+      background: $color;
+      color: $hover-color;
+    }
+  }
+  .rubix-panel-header.nav-inline .nav-#{$name} {
+    > li.active > a {
+      border: 1px solid $color;
+      border-bottom: none;
+    }
+
+    > li.open > .dropdown-toggle {
+      color: white;
+      background: none;
+    }
+  }
+}
+
+@mixin generate-bg-colors($name, $color, $hover-color) {
+  .bg-#{$name} {
+    background: $color !important;
+
+    table td,th {
+      border-color: rgba(0, 0, 0, 0.05) !important;
+    }
+  }
+  .bg-focus-#{$name}:focus {
+    background: $color !important;
+  }
+  .bg-hover-#{$name}:hover {
+    background: $color !important;
+  }
+}
+
+@mixin generate-fg-colors($name, $color, $hover-color) {
+  .fg-#{$name} {
+    color: $color;
+
+    .nav-tabs > li.active > a {
+      @if $name == "white" {
+        color: #89949B;
+      } @else {
+        color: $color;
+      }
+    }
+  }
+  .fg-tab-active-#{$name} {
+    .nav-tabs > li.active > a {
+      color: $color !important;
+    }
+  }
+  .fg-focus-#{$name}:focus {
+    color: $color;
+  }
+  .fg-hover-#{$name}:hover {
+    color: $color;
+  }
+}
+
+@mixin generate-border-colors($name, $color, $hover-color) {
+  .border-#{$name} {
+    border-color: $color !important;
+
+    .rubix-timeline-body > ul {
+      border-color: $color;
+    }
+
+    &.rubix-timeline-view:before {
+      border-color: $color;
+    }
+  }
+  .border-hover-#{$name} {
+    &:hover {
+      border-color: $color !important;
+    }
+  }
+  .border-focus-#{$name} {
+    &:focus {
+      border-color: $color !important;
+    }
+  }
+}
+
+@mixin generate-timeline($name, $color, $hover-color) {
+  .tl-#{$name} {
+    .rubix-timeline-body > ul > li:before {
+      border-color: $color;
+    }
+  }
+}
+
+@mixin generate-list($name, $color, $hover-color) {
+  .list-bg-#{$name} {
+    >.list-group-item {
+      &.active {
+        background: $color !important;
+        color: $hover-color !important;
+      }
+    }
+  }
+
+  .list-fg-#{$name} {
+    >.list-group-item {
+      color: $color;
+    }
+  }
+}
+
+@mixin generateColors($name, $color, $hover-color) {
+  @include generate-button($name, $color, $hover-color);
+  @include generate-menu($name, $color, $hover-color);
+  @include generate-nav($name, $color, $hover-color);
+  @include generate-tab($name, $color, $hover-color);
+  @include generate-bg-colors($name, $color, $hover-color);
+  @include generate-fg-colors($name, $color, $hover-color);
+  @include generate-border-colors($name, $color, $hover-color);
+  @include generate-timeline($name, $color, $hover-color);
+  @include generate-list($name, $color, $hover-color);
+}

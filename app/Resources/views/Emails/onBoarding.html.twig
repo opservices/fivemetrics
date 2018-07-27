@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<body style="width:100%; height: 100%; margin:0; padding:0; background-color: #ffffff">
+{% set styleText = "color: #ffffff;padding: 5% 0%;margin: 0% 5%; font-size: 20px; line-height: 30px; font-family: Arial, Helvetica, sans-serif;" %}
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="600px" style="margin: auto;">
+    <tr>
+        <td align="center" valign="top"
+            style="width: 600px;height: 100%;margin: 0;padding: 0;border-top: 0">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                   style="background-image: url('https://s3.amazonaws.com/fivemetrics.io/imgs/background.png');margin: 0;padding: 0">
+                <tbody>
+                <tr>
+                    <td>
+                        <table style="width:100%">
+                            <tr>
+                                <td align="center" height="35px">
+                                    <img src="https://s3.amazonaws.com/fivemetrics.io/imgs/landingPage/logo.png"
+                                         style="padding-top: 12%;border:0;line-height:100%;outline:none;display: block; height: 34px;"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="transparent" align="center" style="font-family: Arial, Helvetica, sans-serif;">
+                        <p style="color: #0cfbbb; font-size: 30px; font-weight: normal;padding-top: 4%">
+                            <span>ONBOARDING 100% COMPLETED</span>
+                        </p>
+                        <p style="color: #ffffff;font-size: 28px;width: 40%;padding-bottom: 1%;padding-top: 12%;margin-left: auto;margin-right: auto;border-bottom: 1px solid #8F52F8">
+                            <span>Hey datalover!</span>
+                        </p>
+                        <p style="{{ styleText }}">
+                            <span>We are very excited about your interest in viewing AWS data. We will be with you throughout this incredible journey.</span>
+                        </p>
+                        <p style="{{ styleText }} padding: 2% 0%; font-size: 20px">
+                            <span>We have discovered <span style="font-weight: bold; color: white;">{{ total }} indicators</span> in your AWS environment. Your first collection is now ready to be viewed.</span>
+                        </p>
+                        <p style="{{ styleText }} font-size: 16px; padding: 7% 0%;">
+                            <span>Check what we have found:</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td style="display: inline-block">
+                        <table style="width:100%; height: 100%; margin-top: 4px;" cellpadding="7">
+                            <tbody>
+                            <tr style="text-align: center">
+                                {% set line = 1 %}
+                                {% for collector in collectors %}
+                                <td align="center" height="100px">
+                                    <table cellpadding="2" border="0"
+                                           style="color: #ffffff;min-width: 180px;max-width: 180px;width:100%;height:100%;background-color: #262626;word-break: normal">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <table style="margin: auto">
+                                                        <tbody>
+                                                        <tr align="center" style="min-height: 200px; color:#3EFCC9;">
+                                                            <td style="font-size: 14px">{{ collector.label }}</td>
+                                                        </tr>
+                                                        <tr align="center">
+                                                            <td style="font-weight: bold;font-size: 28px;height: 10%">{{ collector.total }}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td>
+                                                    <table style="margin: auto">
+                                                        <tbody>
+                                                        <tr align="center" style="width: 100%; height: 100%">
+                                                            <td>
+                                                                <img style="height: 75px;"
+                                                                     src="https://s3.amazonaws.com/fivemetrics.io/imgs/landingPage/{{ collector.icon }}"/>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+                                {% if (line % 3) == 0 %}
+                                    </tr>
+                                    <tr style="text-align: center">
+                                {% endif %}
+                                {% set line = line + 1 %}
+                                {% endfor %}
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="transparent" align="center" style="padding-top: 5%;">
+                        <p style="{{ styleText }}">
+                            <span>You can now <b>check your collected metrics</b>. In addition, you can start getting data from other collections.</span>
+                        </p>
+                        <p style="{{ styleText }} margin: -12px 0px 20px 0px; line-height: 35px;">
+                            <span>Sincerely,<br>FiveMetrics Team</span>
+                        </p>
+                        <p style="border-bottom: 1px solid #ffffff;width: 80%;margin: 0 auto;padding-top: 2%"></p>
+                        <p style="{{ styleText }} margin: 6% 5% 0% 5%;">
+                            We are very excited that you joined in the community of people that trust in data to build
+                            more reliable results in business!
+                        </p>
+                        <p style="{{ styleText }} font-weight: bold; margin: -5% 5% 1% 5%; font-size: 24px;">
+                            <span>Cool Analytics Experience for AWS</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="middle" style="padding-bottom: 12%">
+                        <a href="https://beta.fivemetrics.io" target="_blank"
+                           style="display: inline-block;font-family: Arial, Helvetica, sans-serif; text-decoration:none; text-align: center; padding: 2.5% 7% 2.5% 7%; border-radius: 25px; color: #ffffff; font-size: 14px; font-weight: lighter;background: linear-gradient(to left, #3EFCC9 0%, #8F52F8 100%);">
+                            Got It! Go to FiveMetrics Login
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#292929" align="center" style="{{ styleText }}; padding: 4.5% 25%">
+                        <p style="font-weight: 600; font-size: 16px;">
+                            <span>Need help?</span>
+                        </p>
+                        <p style="font-size: 16px;">
+                            <span>
+                                Please send any feedback or bug reports to
+                                <a style="color: #ffffff" href="mailto:team@fivemetrics.io" target="_blank">
+                                    team@fivemetrics.io
+                                </a>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

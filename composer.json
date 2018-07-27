@@ -1,0 +1,83 @@
+{
+    "name": "fivemetrics/app-symfony",
+    "license": "proprietary",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {
+        "php": ">=7.1",
+        "symfony/symfony": "3.4.*",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "symfony/swiftmailer-bundle": "*",
+        "symfony/monolog-bundle": "*",
+        "symfony/polyfill-apcu": "^1.0",
+        "sensio/distribution-bundle": "^5.0",
+        "sensio/framework-extra-bundle": "*",
+        "incenteev/composer-parameter-handler": "*",
+        "twig/twig": "^1.0||^2.0",
+        "aws/aws-sdk-php": "3.*",
+        "algatux/influxdb-bundle": "^2.1",
+        "nelmio/api-doc-bundle": "dev-master",
+        "nelmio/alice": "^2.3",
+        "predis/predis": "^1.1",
+        "signe/redlock-php": "^1.0",
+        "doctrine/doctrine-migrations-bundle": "^1.2",
+        "malkusch/lock": "^1.1",
+        "symfony/web-server-bundle": "*",
+        "symfony/webpack-encore-pack": "^1.0"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "*",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "phpunit/phpunit": "^5.4"
+    },
+    "scripts": {
+        "symfony-scripts": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
+        ],
+        "cache:clear": [
+            "@php /usr/local/app/bin/console cache:clear",
+            "chown apache. -R . #"
+        ]
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "public",
+        "symfony-tests-dir": "tests",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": null
+    }
+}

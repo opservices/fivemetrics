@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        html.majortom {
+            background: #1D1B1D;
+            overflow: hidden;
+            color: #fff;
+        }
+    </style>
+    <div id="app-container">
+        <div class="force-close" data-react-checksum="971418803" data-reactid="1" data-reactroot="" id="container">
+            <!-- react-text: 2 --><!-- /react-text -->
+            <div data-reactid="3" id="body">
+                <div class="login" data-reactid="4" id="auth-container"
+                     style="position:absolute;top:50%;transform:translateY(-50%);width:100%">
+                    <div data-reactid="5" id="auth-row">
+                        <div data-reactid="6" id="auth-cell">
+                            <div class="container-fluid" data-reactid="7">
+                                <div class="row" data-reactid="8">
+                                    <div class="col-xs-collapse-right col-xs-collapse-left col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1"
+                                         data-reactid="9">
+                                        <div class="rubix-panel" data-reactid="10">
+                                            <div data-reactid="11">
+                                                <div class="rubix-panel-body" data-reactid="12" style="padding:0;">
+                                                    <img data-reactid="13" src="/imgs/common/logo.png"
+                                                         style="margin-left:20px;">
+                                                    <div data-reactid="14">
+                                                        <div data-reactid="15"
+                                                             style="padding:25px;padding-top:0;padding-bottom:0;margin:auto;margin-bottom:25px;margin-top:25px;">
+                                                            {{ form_start(form, {'attr': {'id': 'login_form'}}) }}
+                                                            <div class="alert alert-success"
+                                                                 style="margin-bottom: 20px; display: none;"
+                                                                 id="feedback">
+
+                                                            </div>
+                                                            <div class="form-group" data-reactid="17">
+                                                   <span class="input-group input-group-lg" data-reactid="18">
+                                                       <span class="input-group-addon" data-reactid="19"
+                                                             style="padding-right:14px;">
+                                                               <span class="icon-fontello-mail rubix-icon"
+                                                                     data-reactid="20"></span>
+                                                   </span>{{ form_widget(form._account, { 'attr': {'class': 'border-focus-blue form-control', 'placeholder': 'user@youremail.com'}}) }}</span>
+                                                            </div>
+                                                            <div class="form-group" data-reactid="22" id="password-div">
+                                                   <span class="input-group input-group-lg" data-reactid="23"><span
+                                                               class="input-group-addon" data-reactid="24">
+                                                           <span class="icon-fontello-key rubix-icon"
+                                                                 data-reactid="25"></span>
+                                                       </span>{{ form_widget(form._password, { 'attr': {'class': 'border-focus-blue form-control', 'placeholder': 'password'}}) }}</span>
+                                                            </div>
+                                                            <div class="form-group" data-reactid="27">
+                                                                <div class="container-fluid" data-reactid="28">
+                                                                    {% if error %}
+                                                                        <div>
+                                                                            {# {{ error.messageKey|trans(error.messageData, 'security') }} #}
+                                                                            The email and password you entered does not
+                                                                            match
+                                                                        </div>
+                                                                    {% endif %}
+                                                                    <div class="row" data-reactid="29" id="buttons">
+                                                                        <div class="col-xs-collapse-left col-xs-6"
+                                                                             style="padding-top:10px;">
+                                                                            <a href="{{ path('betaTesterForm') }}">Register!</a>
+                                                                        </div>
+                                                                        <div class="col-xs-collapse-right text-right col-xs-6"
+                                                                             style="padding-top:10px;">
+                                                                            <a href="#" onclick="forgotPassword()">Forgot
+                                                                                Password?</a>
+                                                                        </div>
+
+                                                                        <div class="col-xs-collapse-right text-right col-xs-12"
+                                                                             data-reactid="32" style="margin-top:20px;">
+                                                                            <button class="btn-outlined btn btn-lg btn-default"
+                                                                                    data-reactid="33" type="submit">
+                                                                                Login
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {{ form_end(form) }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-reactid="34" id="footer-container">
+                <div class="text-center container-fluid" data-reactid="35" id="footer">
+                    <div class="row" data-reactid="36">
+                        <div class="col-xs-12" data-reactid="37">
+                            <div data-reactid="38">
+                                <!-- react-text: 39 -->© <!-- /react-text --><!-- react-text: 40 -->2018
+                                <!-- /react-text --><!-- react-text: 41 --> fivemetrics.io | <a
+                                        href="https://fivemetrics.freshdesk.com" target="_blank">Contact us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bg-effect bg-with-effect">
+        <div id="bg-effect-1"></div>
+        <div id="bg-effect-2"></div>
+        <div id="bg-effect-3"></div>
+    </div>
+    <script>
+        function forgotPassword() {
+
+            document.getElementById("password-div").style.display = "none";
+            document.getElementById("buttons").style.display = "none";
+
+            var form = document.getElementById("login_form");
+            var sendBtn = document.createElement("a");
+            var div = document.createElement("div");
+
+            div.appendChild(sendBtn);
+            form.appendChild(div);
+
+            div.className = "col-xs-collapse-right text-right col-xs-12";
+            div.style.marginTop = "margin-top: 20px";
+
+            sendBtn.innerText = "Send Reset Link";
+            sendBtn.href = "#";
+            sendBtn.className = "btn-outlined btn btn-lg btn-default";
+            sendBtn.onclick = handleClick;
+        }
+
+        function handleClick(event) {
+            var email = document.getElementById("login_form__account");
+            if (!email.value.match(".*@.*")) {
+                email.focus();
+                return;
+            }
+
+            var sendBtn = event.target;
+            var onclickHandler = sendBtn.onclick;
+            sendBtn.onclick = null;
+
+            document.getElementById("feedback").innerHTML = "Sending e-mail...";
+            document.getElementById("feedback").className = "alert alert-info";
+            document.getElementById("feedback").style.display = "block";
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "/forgot-password/" + email.value);
+
+            xhr.onload = function (response) {
+
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("feedback").innerHTML = "<strong>Success!</strong> You'll receive an email with the reset password link";
+                    document.getElementById("feedback").className = "alert alert-success";
+                    setTimeout(() => location.reload(), 1000);
+
+                    return;
+                } else {
+                    var data = JSON.parse(xhr.response);
+
+                    document.getElementById("feedback").innerHTML = "<strong>Error!</strong> " + data.errors[0];
+                    document.getElementById("feedback").className = "alert alert-danger";
+                }
+                sendBtn.onclick = onclickHandler;
+
+            };
+
+            xhr.send();
+        }
+    </script>
+{% endblock %}

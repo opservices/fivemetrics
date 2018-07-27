@@ -1,0 +1,32 @@
+<svg width="40px" height="49px" viewBox="0 0 40 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <polygon id="path-1" points="18.5 14.5221094 11.0753788 20.9246212 17.4778906 13.5 11.0753788 6.0753788 18.5 12.4778906 25.9246212 6.0753788 19.5221094 13.5 25.9246212 20.9246212"></polygon>
+        <filter x="-101.0%" y="-101.0%" width="302.0%" height="302.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-3" points="21.421264 16.2899674 6 31 20.5816707 15.4607186 11.8425279 6 21.421264 14.6314698 31 6 22.2608572 15.4607186 31 24.9214371"></polygon>
+        <filter x="-60.0%" y="-60.0%" width="220.0%" height="220.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashlet/Line-6c" transform="translate(-682.000000, -121.000000)">
+            <g id="Star" transform="translate(684.000000, 127.000000)">
+                <g>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#3EFCC9" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Star-Copy" transform="translate(18.500000, 18.500000) rotate(-45.000000) translate(-18.500000, -18.500000) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#3EFCC9" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

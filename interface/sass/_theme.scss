@@ -1,0 +1,135 @@
+/* ADD/REMOVE/CHANGE THEMES HERE */
+
+@include theme-maker("majortom", (
+  theme: (
+    color: #ffffff,
+    bg: #1D1B1D
+  ),
+  body: (
+    bg: radial-gradient(ellipse at bottom, #131a29 0%, $dark-grey 100%),
+    color: #ffffff
+  ),
+  header: (
+    bg: #1D1B1D,
+    color: #ffffff,
+    hover-color: #1D1B1D,
+
+    logout: (
+      bg: #1D1B1D,
+      color: #585858,
+      hover-bg: #ffffff
+    ),
+
+    sidebar-btn: (
+      bg: #3EFCC9,
+      color: #1D1B1D,
+      hover-bg: darken(#3EFCC9, 10%)
+    )
+  ),
+  sidebar: (
+      bg: #1D1B1D,
+      width: 250px,
+      avatar: (
+        bg: #1D1B1D
+      ),
+      controls: (
+        bg: #1D1B1D,
+        btn: (
+          color: #3EFCC9,
+          border: #3EFCC9,
+          active-bg: #3EFCC9,
+          active-color: #1D1B1D
+        )
+      )
+    ),
+  link: (
+    color: #3EFCC9,
+    bg: transparent
+  ),
+  panel: (
+    bg: rgba(29,27,29,0.5),
+    bgimg: linear-gradient(0deg, rgba(45, 45, 45, 0.3) 67%, rgba(36, 35, 35, 0.3) 100%),
+    borders: (
+      borderall: 0,
+      bordertop: 0,
+      borderright: 0,
+      borderbottom: (1px solid #8F52F8),
+      borderleft: 0
+    ),
+    op: 1,
+    rad: 1px
+  ),
+  tag: (
+      bg: #1D1B1D,
+      borders: (
+        borderall: 1px solid #8F52F8
+      ),
+      color: #ffffff,
+      weight: 500,
+      size: 14px,
+      case: uppercase,
+      hover: #1D1B1D,
+      rad: 2px
+  ),
+  footer: (
+    bg: transparent,
+    color: #ffffff
+  ),
+	type: (
+      sizeA: 36px,
+      sizeB: 18px,
+      sizeC: 17px,
+      sizeD: 16px,
+      sizeE: 14px,
+      sizeF: 10px,
+      colorA: #ffffff,
+      colorB: #ffffff,
+      colorC: #3EFCC9,
+      colorD: #ffffff,
+      colorE: #AC8BE4,
+      colorF: #ffffff,
+      caseA: uppercase,
+      caseB: uppercase,
+      caseC: uppercase,
+      caseD: uppercase,
+      caseE: uppercase,
+      caseF: uppercase,
+      dashlet: (
+        title: (
+          color: #3EFCC9,
+          size: 18px,
+          style: normal,
+          case: uppercase,
+          weight: lighter
+        ),
+        mainnumber: (
+          size: 56px,
+          color: #ffffff,
+          style: normal,
+          case: none,
+          weight: bold
+        ),
+        secondarynumber: (
+          size: 16px,
+          color: #ffffff,
+          style: normal,
+          case: none,
+          weight: bold
+        ),
+        mainunit: (
+          size: 14px,
+          color: #ffffff,
+          style: italic,
+          case: none,
+          weight: lighter
+        ),
+        secondaryunit: (
+          size: 16px,
+          color: #AC8BE4,
+          style: normal,
+          weight: lighter,
+          case: none
+        )
+      )
+    )
+));

@@ -1,0 +1,77 @@
+imports:
+    - { resource: config.yml }
+
+#doctrine:
+#    orm:
+#        metadata_cache_driver: apc
+#        result_cache_driver: apc
+#        query_cache_driver: apc
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler: nested
+        nested:
+            type: stream
+            path:         '/var/log/app/%kernel.environment%.log'
+            channels:     ['!request']
+            # Detailed debug information
+            #
+            # DEBUG
+            #
+            #
+            # Interesting events
+            #
+            # Examples: User logs in, SQL logs.
+            #
+            # INFO
+            #
+            #
+            # Uncommon events
+            #
+            # NOTICE
+            #
+            #
+            # Exceptional occurrences that are not errors
+            #
+            # Examples: Use of deprecated APIs, poor use of an API,
+            # undesirable things that are not necessarily wrong.
+            #
+            # WARNING
+            #
+            #
+            # Runtime errors
+            #
+            # ERROR
+            #
+            # Critical conditions
+            #
+            # Example: Application component unavailable, unexpected exception.
+            #
+            # CRITICAL
+            #
+            #
+            # Action must be taken immediately
+            #
+            # Example: Entire website down, database unavailable, etc.
+            # This should trigger the SMS alerts and wake you up.
+            #
+            # ALERT
+            #
+            #
+            # Urgent alert.
+            #
+            # EMERGENCY
+            #
+            level:        INFO
+        #nested:
+        #    type:  stream
+        #    path:  "%kernel.logs_dir%/%kernel.environment%.log"
+        #    level: debug
+        #console:
+        #    type:  console
+        console:
+            type: console
+            process_psr_3_messages: false

@@ -1,0 +1,14 @@
+[Unit]
+Description=Gearmand distributed worker system
+Requires=gearmand.service
+After=syslog.target network.target
+
+[Service]
+User=root
+Type=forking
+ExecStart=/usr/local/bin/gcontrol $OPTIONS
+PIDFile=/var/run/gcontrol.pid
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
