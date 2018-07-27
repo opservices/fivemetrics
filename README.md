@@ -8,7 +8,7 @@ FiveMetrics is an open source solution that provides a centralized view of your 
 ![](http://fivemetrics.io/imgs/docs/fivemetrics-overview.png)
 
 ## Installation using Docker
- Starting creating a FiveMetrics image container *(This operation can take a little time)*.
+ Start creating a FiveMetrics image container *(This operation can take a some time)*.
  ```bash
  docker build -t opservices/fivemetrics github.com/opservices/fivemetrics
 ```
@@ -16,8 +16,7 @@ With an image available, your can start your container binding the external port
 ```bash
  docker run --name fivemetrics -p 5555:80 -d opservices/fivemetrics
 ```
-
-A default user '*tester@fivemetrics.io*' with password '*pass*' is provided, but you can create a new user using **'Register'** link at login time. 
+You can create a new user using **'Register'** link at login time. 
 
 If you have any problems please access our [Support Page](https://fivemetrics.freshdesk.com/).
 
@@ -26,7 +25,6 @@ We provides a FAQ on  [Support Page](https://fivemetrics.freshdesk.com/).
 
 ## Run from master
 TODO
-
 
 ## Contribute
 
