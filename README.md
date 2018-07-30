@@ -3,7 +3,7 @@
 [Website](https://fivemetrics.io) |
 [Support Forum](https://fivemetrics.freshdesk.com)
 
-FiveMetrics is an open source solution that provides a centralized view of your AWS environment with awesome dashboards, realtime and time series data collected from AWS specific APIs, including CloudWatch.
+FiveMetrics is an open source solution that provides a centralized view of your AWS environment with awesome dashboards, time series and realtime data collected from AWS specific APIs, including CloudWatch.
 
 ![](http://fivemetrics.io/imgs/docs/fivemetrics-overview.png)
 
@@ -21,7 +21,7 @@ You can create a new user using **'Register'** link at login time.
 If you have any problems please access our [Support Page](https://fivemetrics.freshdesk.com/).
 
 ## Documentation & Support
-We provides a FAQ on  [Support Page](https://fivemetrics.freshdesk.com/). 
+We provide a FAQ section on our [Support Page](https://fivemetrics.freshdesk.com/). 
 
 ## Run from master
 TODO
