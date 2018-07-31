@@ -1,6 +1,6 @@
 {
     "name": "fivemetrics/app-symfony",
-    "license": "proprietary",
+    "license": "Apache-2.0",
     "type": "project",
     "autoload": {
         "psr-4": {
